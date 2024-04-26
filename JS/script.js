@@ -91,31 +91,15 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionOculta2.style.display = "none";
   });
 
-  // Seleccionar las imágenes
-  const imgLeft = document.getElementById("seccionPs4");
-  const imgRight = document.getElementById("seccionXbox");
+  //Cambiar el color del fondo al hacer scroll hacia abajo
+  window.addEventListener("scroll", function () {
+    let body = document.querySelector("body");
+    let posicionScroll = window.scrollY; //establezco posicionScroll con ScrollY de window
 
-  // Función para mover las imágenes hacia la izquierda y hacia la derecha
-  function moveImages() {
-    // Mover la imagen izquierda hacia la izquierda
-    imgLeft.style.transform = "translateX(728px)";
-    // Mover la imagen derecha hacia la derecha
-    imgRight.style.transform = "translateX(-728px)";
-  }
-
-  // Función para restaurar la posición original de las imágenes
-  function resetImages() {
-    // Restaurar la posición original de la imagen izquierda
-    imgLeft.style.transform = "translateX(0)";
-    // Restaurar la posición original de la imagen derecha
-    imgRight.style.transform = "translateX(0)";
-  }
-
-  // Evento al pasar el cursor sobre las imágenes para moverlas
-  imgLeft.addEventListener("mouseover", moveImages);
-  imgRight.addEventListener("mouseover", moveImages);
-
-  // Evento al quitar el cursor de las imágenes para restaurarlas
-  imgLeft.addEventListener("mouseout", resetImages);
-  imgRight.addEventListener("mouseout", resetImages);
+    if (posicionScroll > 200) {
+      body.style.backgroundColor = "#ececf0";
+    } else {
+      body.style.backgroundColor = "White";
+    }
+  });
 });

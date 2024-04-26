@@ -247,10 +247,16 @@
 
     <section class="seccion-cuadrado3" id="seccion-cuadrado3">
         <section class="seccionPS4" id="seccionPs4">
-            <img src="../img/interfaz_PS4.jpg" alt="" width="700px" height="500PX" />
+        
+                <img src="../img/interfaz_PS4.jpg" alt="" width="700px" height="500px" />
+            
+
         </section>
         <section class="seccionXbox" id="seccionXbox">
-            <img src="../img/INTERFAZ_XBOX.webp" alt="" height="500px" width="700PX" />
+            
+                <img src="../img/INTERFAZ_XBOX.webp" alt="" height="500px" width="700px" />
+           
+
         </section>
     </section>
 
