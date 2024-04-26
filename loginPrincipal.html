@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión de Usuario</title>
+    <link rel="icon" href="img/flechas-repetir (1).png">
+    <link rel="stylesheet" href="CSS/loginPrincipal.css?v=<?php echo time(); ?>">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="img/OScomparerlogogrande.png" alt="" width="400" height="150">
+    </div>
+
+    
+
+    <form action="loginPrincipal.php" method="post" class="formulario">
+        <label for="nombre">Nombre de Usuario</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Nombre"><br>
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" required placeholder="Contraseña"><br>
+        <button type="submit" class="btn-iniciarsesion">Iniciar sesión</button>
+    </form>
+    <div class="contenedor-botones">
+    <a href="VistaUsuario/registro.html">
+    <button type="submit" class="btn-registrarse">Registrarse</button>
+</a>
+<br></br>
+<a href="VistaAdmin/loginadmin.html">
+<button type="submit" class="btn-admin">Iniciar sesión como Administrador</button>
+</a>
+</div>
+
+<p class="texto-proteccion">OScomparer | Todos los derechos reservados</p>
+
+</body>
+
+</html>
