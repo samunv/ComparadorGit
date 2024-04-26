@@ -1,0 +1,45 @@
+<?php
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Subir un nuevo Sistema Operativo</h1>
+    <form action="subir.php" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="fabricante">Fabricante:</label><br>
+        <input type="text" id="fabricante" name="fabricante" required><br>
+
+        <label for="arquitectura">Arquitectura:</label><br>
+        <input type="text" id="arquitectura" name="arquitectura" required><br>
+
+        <label for="comunidad">Comunidad:</label><br>
+        <input type="number" id="comunidad" name="comunidad" required><br>
+
+        <label for="seguridad">Seguridad:</label><br>
+        <input type="number" id="seguridad" name="seguridad" min="1" max="10" required><br>
+
+        <label for="version">Versión:</label><br>
+        <input type="text" id="version" name="version" required><br>
+
+        <label for="dispositivos">Dispositivos:</label><br>
+        <input type="text" id="dispositivos" name="dispositivos" required><br>
+
+        <label for="imagen">Imagen:</label><br>
+        <input type="file" id="imagen" name="imagen" required><br>
+
+        <input type="submit" value="Crear">
+    </form>
+</body>
+
+</html>
