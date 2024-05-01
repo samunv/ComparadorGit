@@ -10,7 +10,7 @@ class SistemaOperativo
     private $version; //string
     private $dispositivos; //string
     private $imagen; //string
-    private $gratis; //boolean
+    private $gratis; //string
 
 
     public function __construct($nombre, $fabricante, $arquitectura, $comunidad, $seguridad, $version, $dispositivos, $imagen, $gratis)

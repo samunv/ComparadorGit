@@ -1,0 +1,26 @@
+footer {
+    background-color: white;
+    /* Cambia al color de fondo deseado */
+    color: black;
+    width: 100%;
+    padding: 20px 0;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+footer img {
+    color: black;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+footer img:hover{
+    opacity: 0.5;
+}

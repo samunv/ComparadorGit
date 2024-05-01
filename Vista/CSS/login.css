@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'San Francisco', sans-serif;
+}
+
+.logo{
+    border: 1px red solid;
+}
+#alerta{
+    background-color: #ececf0;
+    width: 500px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 20px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+#logo{
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#alerta h1, img{
+    padding: 25px;
+}
+
+#btn-alerta{
+    
+    background-color: #0071e3;
+    color: white;
+    border: 1px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px;
+    width: 220px;
+    transition: all 0.3s ease;
+    margin: 20px;
+}
+
+#btn-alerta:hover{
+    background-color: transparent;
+    border: 1px solid #0071e3;
+    color: #0071e3;
+    cursor: pointer;
+}
+
+.formulario {
+    background-color: #ececf0;
+    padding: 40px;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.formulario #nombre,
+#contrasena,
+#email {
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+    width: 200px;
+}
+
+
+.btn-iniciarsesion {
+    background-color: #0071e3;
+    color: white;
+    border: 1px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px;
+    width: 220px;
+    transition: all 0.3s ease;
+}
+
+.btn-iniciarsesion:hover {
+    background-color: transparent;
+    border: 1px solid #0071e3;
+    color: #0071e3;
+    cursor: pointer;
+}
+
+.btn-registrarse,
+.btn-admin {
+    background-color: transparent;
+    color: #0071e3;
+    border: #0071e3 1px solid;
+    border-radius: 30px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-registrarse:hover,
+.btn-admin:hover {
+    background-color: #0071e3;
+    border: 1px solid #0071e3;
+    color: white;
+    cursor: pointer;
+}
+
+.contenedor-botones {
+
+    width: 400px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.texto-proteccion {
+    color: grey;
+    text-align: center;
+    font-size: smaller;
+    margin-top: 50px;
+}
