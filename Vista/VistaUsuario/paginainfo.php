@@ -17,6 +17,30 @@
     <?php
     include("header.php");
     ?>
+    <section id="seccion-filtros">
+        <table class="tabla-filtros">
+            <tr>
+                <td><img src="../img/muesca-movil.png" alt="" width="40" height="40" id="icono-movil"></td>
+                <td><img src="../img/dispositivos.png" alt="" width="40" height="40" id="icono-pc"></td>
+                <td><img src="../img/mando.png" alt="" width="40" height="40" id=""></td>
+                <td><img src="../img/pantalla.png" alt="" width="40" height="40" id=""></td>
+                <td><img src="../img/volante.png" alt="" width="40" height="40" id=""></td>
+                <td> <img src="../img/gratis.png" alt="" width="40" height="40" id="" /></td>
+                <td><img src="../img/usd-circulo.png" alt="" width="40" height="40" id=""></td>
+
+            </tr>
+            <tr>
+                <td>Móviles</td>
+                <td>Ordenadores</td>
+                <td>Consolas</td>
+                <td>Televisión</td>
+                <td>Coches</td>
+                <td>Gratis</td>
+                <td>De pago</td>
+            </tr>
+        </table>
+
+    </section>
     <div class="titulo">
         <h1>Buscar</h1>
     </div>
