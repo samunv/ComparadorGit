@@ -1,0 +1,167 @@
+header {
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+
+.nav-principal ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 13px;
+}
+
+.nav-principal ul li:hover {
+    background-color: #ececf0;
+
+
+}
+
+.nav-principal ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 13px;
+    border-radius: 20px;
+}
+
+.nav-movil {
+    display: none;
+}
+
+.caja-buscador-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.sesionusuario {
+    margin-top: 3px;
+}
+
+.sesionusuario:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.contenedor-buscador {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    width: 175px;
+    padding: 5px 30px;
+    border-radius: 30px;
+    background-color: #ececf0;
+    border: 1px #ececf0 solid;
+    overflow: hidden;
+}
+
+.buscador {
+    border: none;
+    margin-right: 5px;
+    width: 100px;
+    background-color: #ececf0;
+    font-weight: bold;
+    color: grey;
+    padding: 5px;
+}
+
+.buscador:focus {
+    outline: none;
+    /* Elimina el contorno predeterminado */
+}
+
+.contenedor-buscador:hover,
+.contenedor-buscador:hover .buscador {
+    cursor: pointer;
+    background-color: #dfdfe5;
+}
+
+.contenedor-buscador img {
+    margin-top: 3px;
+}
+
+.contenedor-buscador img:hover {
+    opacity: 0.5;
+}
+
+.menu {
+    display: none;
+}
+
+
+/*Estilo para dispositivos móviles con máximo de 500px de ancho*/
+@media(max-width:500px) {
+
+    #header {
+        width: 100%;
+    }
+
+    .menu {
+        display: block;
+        margin-right: 3px;
+        margin-top: 3px;
+    }
+
+    .caja-buscador-login {
+        width: 240px;
+    }
+
+    .contenedor-buscador {
+        width: 110px;
+    }
+
+    .contenedor-buscador img {
+        margin-top: 3px;
+        margin-right: 7px;
+    }
+
+    .buscador {
+        padding: 0%;
+    }
+
+    .nav-principal ul li {
+        display: none;
+    }
+
+    .nav-movil {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        background-color: white;
+        border-top: 1px solid black;
+    }
+
+    .nav-movil ul li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        font-size: 17px;
+        transition: all 0.3s ease;
+        border-radius: 20px;
+        padding: 13px;
+    }
+
+    .nav-movil ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 13px;
+        border-radius: 20px;
+    }
+
+}

@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ececf0;
+    font-family: "San Francisco", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+#carrusel-dispositivos {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+#carrusel-dispositivos::-webkit-scrollbar{
+    background-color: #ececf0;
+}
+
+#botones-scroll{
+    position: absolute;
+    bottom: -16px;
+    left: 87%;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+#botones-scroll #imagen-flecha2{
+    transform: scaleX(-1);
+}
+
+#botones-scroll img:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.caja-carrusel {
+    flex: 1 0 auto;
+    background-color: white;
+    width: 300px;
+    height: 510px;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    /* Definir la transición */
+}
+
+.caja-carrusel:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.titulo {
+
+    background-color: white;
+    height: 150px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.titulo h1 {
+    margin-left: 60px;
+}
+
+.iconos {
+    margin-left: 10px;
+}
+
+.secciones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+
+}
+
+.contenedores p {
+    margin-bottom: 5px;
+}
+
+.contenedores h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    font-size: larger;
+}
+
+.contenedores {
+    background-color: white;
+    border-radius: 20px;
+    color: grey;
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+
+
+}
+
+.contenedores img {
+    margin: 10px;
+}
+
+.contenedores .comentarios {
+    cursor: pointer;
+    width: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+
+}
+
+.contenedores .comentarios:hover {
+    background-color: #ececf0;
+}

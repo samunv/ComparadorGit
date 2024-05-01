@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "San Francisco", Arial, sans-serif;
+}
+
+body {
+    background-color: #ececf0;
+    overflow-x: hidden;
+}
+
+h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    font-size: larger;
+
+
+}
+
+.contenedores p {
+    margin-bottom: 5px;
+
+}
+
+
+
+.seccion-presentacion {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.seccion-presentacion .imagen-presentacion {
+    width: 400px;
+    overflow: hidden;
+
+}
+
+.seccion-presentacion .imagen-presentacion img {
+    width: 400px;
+    height: 400px;
+}
+
+.botones-presentacion button {
+    color: white;
+    background-color: #0071e3;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+    width: 270px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.botones-presentacion button:hover {
+    background-color: transparent;
+    border: #0071e3 2px solid;
+    color: #0071e3;
+}
+
+.botones-presentacion {
+    width: 450px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.botones-presentacion h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 0%;
+
+}
+
+
+.contenedores {
+    background-color: white;
+    border-radius: 20px;
+    color: grey;
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.contenedores img {
+    margin: 10px;
+}
+
+.contenedores .comentarios {
+    cursor: pointer;
+    width: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+
+}
+
+
+.contenedores .comentarios:hover {
+    background-color: #ececf0;
+}
+
+.texto-descubre {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.seccion-cajas-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.seccion-principal {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#btn-ver-todo {
+    color: white;
+    background-color: #0071e3;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+#btn-ver-todo:hover {
+
+    background-color: transparent;
+    color: #0071e3;
+}
+
+
+
+
+.seccion-cuadrado {
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 1400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.texto-deMoviles {
+    text-align: center;
+    font-size: 40px;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+
+}
+
+.seccion-cuadrado2 {
+    overflow: hidden;
+    display: flex;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.seccionAndroid {
+    width: 48%;
+    height: 500px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#seccionAndroid-oculta,
+#seccioniOS-oculta {
+    display: none;
+    background-color: white;
+    width: 48%;
+    height: 500px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+
+}
+
+#contenedor-oculto1,
+#contenedor-oculto2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.android-oculto {
+    font-size: 70px;
+    text-align: center;
+    color: black;
+    width: 620px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.ios-oculto {
+    font-size: 70px;
+    text-align: center;
+    color: black;
+    width: 300px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tabla1 tr th,
+#tabla2 tr th {
+    padding: 20px;
+
+
+}
+
+#tabla1,
+#tabla2 {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btnoculto1,
+#btnoculto2 {
+    margin-top: 50px;
+    color: #0071e3;
+    background-color: white;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#btnoculto1:hover,
+#btnoculto2:hover {
+    background-color: #0071e3;
+    border: #0071e3 2px solid;
+    color: white;
+}
+
+.seccioniOS {
+    background-color: white;
+    width: 48%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+
+
+
+
+.iOS {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.iOS h1 {
+
+    font-size: 110px;
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+
+}
+
+.Android {
+    display: flex;
+    text-align: center;
+}
+
+.Android h1 {
+
+    font-size: 80px;
+    text-align: center;
+    color: black;
+}
+
+.btn-iOS {
+    color: #0071e3;
+    background-color: white;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.btn-iOS:hover {
+    background-color: #0071e3;
+    border: #0071e3 2px solid;
+    color: white;
+}
+
+.btn-Android {
+    color: #0071e3;
+    background-color: white;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn-Android:hover {
+    background-color: #0071e3;
+    border: #0071e3 2px solid;
+    color: white;
+}
+
+
+
+.texto-deConsolas {
+    text-align: center;
+    font-size: 40px;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+
+.seccion-cuadrado3 {
+    overflow: hidden;
+    display: flex;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.seccionPS5 {
+    width: 48%;
+    height: 500px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+}
+
+
+
+.seccionXbox {
+    background-color: white;
+    width: 48%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+}
+
+.seccionPS5:hover,
+.seccionXbox:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#seccionPS5-oculta,
+#seccionXbox-oculta {
+    display: none;
+    background-color: white;
+    width: 48%;
+    height: 500px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+}
+
+#contenedor-oculto3,
+#contenedor-oculto4 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.texto-ps5,
+.texto-xbox {
+    font-size: 70px;
+    text-align: center;
+    color: black;
+    width: 620px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#tabla3 tr th,
+#tabla4 tr th {
+    padding: 20px;
+
+
+}
+
+#tabla3,
+#tabla4 {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btnoculto3,
+#btnoculto4 {
+    margin-top: 50px;
+    color: #0071e3;
+    background-color: white;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#btnoculto3:hover,
+#btnoculto4:hover {
+    background-color: #0071e3;
+    border: #0071e3 2px solid;
+    color: white;
+}
+
+
+@media (max-width: 500px) {
+
+    body {
+        background-color: #ececf0;
+    }
+
+    .seccion-presentacion {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .seccion-presentacion .imagen-presentacion {
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+        padding-bottom: 10px;
+    }
+
+    .seccion-presentacion .imagen-presentacion img {
+        width: 150px;
+        height: 150px;
+
+    }
+
+    .botones-presentacion button {
+        color: white;
+        background-color: #0071e3;
+        border: 2px #0071e3 solid;
+        border-radius: 30px;
+        padding: 15px 30px;
+        width: 190px;
+
+    }
+
+    .botones-presentacion {
+        width: 300px;
+        height: 190px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+
+    .botones-presentacion h1 {
+        color: white;
+        text-align: center;
+        font-size: 25px;
+
+    }
+
+    .seccion-cuadrado {
+        background-color: white;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 400px;
+        height: 130px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .seccion-cuadrado img {
+        width: 400px;
+        height: 130px;
+    }
+
+    .seccion-principal {
+        width: 400px;
+    }
+
+    .contenedores {
+        width: 400px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .seccion-cuadrado2 {
+        display: none;
+    }
+
+    .seccion-cuadrado3 {
+        display: none;
+    }
+
+
+}
