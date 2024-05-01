@@ -10,6 +10,8 @@ window.addEventListener("DOMContentLoaded", function () {
       res = data; // Almacena la respuesta en la variable res
       console.log(res);
       imprimirContenedores(res);
+      filtrarMoviles(res);
+      filtrarOrdenadores(res);
     })
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
@@ -83,4 +85,35 @@ window.addEventListener("DOMContentLoaded", function () {
 
     imprimirContenedores(datosEncontrados);
   }
+
+  //Filtrar so de móviles
+  function filtrarMoviles(datos) {
+    let iconoMovil = document.getElementById("icono-movil");
+    iconoMovil.addEventListener("click", function () {
+      let moviles = []; // Guardar los datos de los móviles en el array vacío
+      for (let i = 0; i < datos.length; i++) {
+        //recorrer todos los datos
+        if (datos[i].dispositivos.toLowerCase() === "móviles") {
+          //cuando los dispositivos de los datos sean Móviles:
+          moviles.push(datos[i]); // Añadir los datos al array mientras pertenezcan a los móviles
+          imprimirContenedores(moviles);
+        }
+      }
+    });
+  }
+
+  function filtrarOrdenadores(datos) {
+    let iconoPc = document.getElementById("icono-pc");
+    iconoPc.addEventListener("click", function () {
+      let ordenadores = [];
+      for (let i = 0; i < datos.length; i++) {
+        if (datos[i].dispositivos.toLowerCase() === "ordenadores") {
+          ordenadores.push(datos[i]);
+          imprimirContenedores(ordenadores);
+        }
+      }
+    });
+  }
+
+  
 });

@@ -20,11 +20,12 @@
     ?>
 
     <section id="carrusel-dispositivos">
-        <div class="caja-carrusel"><a href="#titulo-moviles"><img src="../img/SO Móviles prueba.png" alt="" srcset=""></a></div>
+        <div class="caja-carrusel"><a href="#titulo-moviles"><img src="../img/SO Móviles prueba.png" alt=""></a></div>
         <div class="caja-carrusel"><a href="#titulo-ordenadores"><img src="../img/SOpc-prueba3.png" alt=""></a></div>
         <div class="caja-carrusel"><a href="#titulo-consolas"><img src="../img/SOconsolas.png" alt=""></a></div>
         <div class="caja-carrusel">TV</div>
         <div class="caja-carrusel"><a href="#titulo-coches"><img src="../img/SOcoches2.png" alt=""></a></div>
+        <div class="caja-carrusel" id="elemento-invisible"></a></div>
     </section>
     <section id="botones-scroll">
 
@@ -35,21 +36,18 @@
 
     <section id="titulo-moviles" class="titulo">
         <h1>Sistemas Operativos de Móviles</h1>
-        <img src="../img/muesca-movil.png" alt="" width="40" height="40" class="iconos">
     </section>
 
     <section id="seccion-moviles" class="secciones"></section>
 
     <section id="titulo-ordenadores" class="titulo">
         <h1>Sistemas Operativos de Ordenadores</h1>
-        <img src="../img/dispositivos.png" alt="" width="40" height="40" class="iconos">
     </section>
 
     <section id="seccion-ordenadores" class="secciones"></section>
 
     <section id="titulo-consolas" class="titulo">
         <h1>Sistemas Operativos de Consolas</h1>
-        <img src="../img/mando.png" alt="" width="40" height="40" class="iconos">
     </section>
 
 
@@ -60,14 +58,12 @@
 
     <section id="titulo-tv" class="titulo">
         <h1>Sistemas Operativos de TVs</h1>
-        <img src="../img/pantalla.png" alt="" width="40" height="40" class="iconos">
     </section>
 
     <section id="seccion-tv" class="secciones"></section>
 
     <section id="titulo-coches" class="titulo">
         <h1>Sistemas Operativos de Coches</h1>
-        <img src="../img/volante.png" alt="" width="40" height="40" class="iconos">
     </section>
 
     <section id="seccion-coches" class="secciones"></section>

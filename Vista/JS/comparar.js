@@ -197,9 +197,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
   var contenedor = document.getElementById("carrusel-dispositivos");
   var btnScrollDerecha = document.getElementById("btn-derecha");
+  var btnScrollIzquierda = document.getElementById("btn-izquierda"); 
 
   btnScrollDerecha.addEventListener("click", function () {
-    // Desplaza el scroll horizontalmente hacia la derecha
-    contenedor.scrollLeft += 200; // Cambiar el valor según sea necesario
+    // mueve el scroll hacia la derecha
+    contenedor.scrollLeft += 200;
   });
+
+  btnScrollIzquierda.addEventListener("click", function(){
+
+    contenedor.scrollLeft -= 200; 
+  })
 });
