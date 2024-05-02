@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesión de Usuario</title>
+    <title>OScomparer | Bienvenido</title>
     <link rel="icon" href="Vista/img/flechas-repetir (1).png">
     <link rel="stylesheet" href="Vista/CSS/login.css">
     <script src="/ComparadorGit/Vista/JS/login.js"></script>

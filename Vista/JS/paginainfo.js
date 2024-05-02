@@ -1,4 +1,7 @@
 window.addEventListener("DOMContentLoaded", function () {
+  let liBuscar = document.getElementById("li-buscar");
+  liBuscar.style.fontWeight = "bold";
+
   const seccionPrincipal = document.getElementById("seccion-principal");
 
   let res; // Variable para almacenar la respuesta de la API
@@ -12,6 +15,12 @@ window.addEventListener("DOMContentLoaded", function () {
       imprimirContenedores(res);
       filtrarMoviles(res);
       filtrarOrdenadores(res);
+      filtrarConsolas(res);
+      filtrarTv(res);
+      filtrarCoches(res);
+      filtrarGratis(res);
+      filtrarDePago(res);
+      filtrarTodo(res);
     })
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
@@ -39,10 +48,17 @@ window.addEventListener("DOMContentLoaded", function () {
         "' id='imagen" +
         i +
         "' class='imagenes' width='90' height='90'/>";
+      html += "<div class='contenedor-comentarios-comparar'>";
       html +=
         "<div id='comentario" +
         i +
         "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
+      html +=
+        "<div id='comparar" +
+        i +
+        "' class='comparar'><a href='../VistaUsuario/comparar.php'><img src='../img/flechas-repetir (3).png' alt='' width='25' height='25' title='comparar'></a></div>";
+      html += "</div>";
+
       html += "</div>";
       contadorResultados++;
     }
@@ -50,7 +66,7 @@ window.addEventListener("DOMContentLoaded", function () {
       //Cuando el contadorResultados sea igual que 0, imprimirá lo siguiente:
 
       html += "<div class='no-resultados'>";
-      html += "<p>No se encontraron resultados</p>";
+      html += "<p>Vaya... No encontramos el SO que buscas</p>";
       html +=
         "<img src='../img/triste.png' width='100' height='100' id='img-no-resultados'/>";
       html += "</div>";
@@ -115,5 +131,76 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  
+  function filtrarConsolas(datos) {
+    let iconoConsola = document.getElementById("icono-consola");
+    iconoConsola.addEventListener("click", function () {
+      let consolas = [];
+      for (let i = 0; i < datos.length; i++) {
+        if (datos[i].dispositivos.toLowerCase() === "consola") {
+          consolas.push(datos[i]);
+          imprimirContenedores(consolas);
+        }
+      }
+    });
+  }
+
+  function filtrarTv(datos) {
+    let iconoTv = document.getElementById("icono-tv");
+    iconoTv.addEventListener("click", function () {
+      let tvs = [];
+      for (let i = 0; i < datos.length; i++) {
+        if (datos[i].dispositivos.toLowerCase() === "tv") {
+          tvs.push(datos[i]);
+          imprimirContenedores(tvs);
+        }
+      }
+    });
+  }
+
+  function filtrarCoches(datos) {
+    let iconoCoche = document.getElementById("icono-coche");
+    iconoCoche.addEventListener("click", function () {
+      let coches = [];
+      for (let i = 0; i < datos.length; i++) {
+        if (datos[i].dispositivos.toLowerCase() === "coches") {
+          coches.push(datos[i]);
+          imprimirContenedores(coches);
+        }
+      }
+    });
+  }
+
+  function filtrarGratis(datos) {
+    let iconoGratis = document.getElementById("icono-gratis");
+    iconoGratis.addEventListener("click", function () {
+      let soGratis = [];
+      for (let i = 0; i < datos.length; i++) {
+        if (datos[i].gratis.toLowerCase() === "si") {
+          soGratis.push(datos[i]);
+          imprimirContenedores(soGratis);
+        }
+      }
+    });
+  }
+
+  function filtrarDePago(datos) {
+    let iconoPago = document.getElementById("icono-de-pago");
+    iconoPago.addEventListener("click", function () {
+      let soDePago = [];
+      for (let i = 0; i < datos.length; i++) {
+        if (datos[i].gratis.toLowerCase() === "no") {
+          soDePago.push(datos[i]);
+          imprimirContenedores(soDePago);
+        }
+      }
+    });
+  }
+
+  function filtrarTodo(datos) {
+    let todos = document.getElementById("icono-de-todo");
+
+    todos.addEventListener("click", function () {
+      imprimirContenedores(datos);
+    });
+  }
 });

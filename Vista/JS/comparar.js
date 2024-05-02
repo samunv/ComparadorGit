@@ -1,4 +1,7 @@
 window.addEventListener("DOMContentLoaded", function () {
+  let liComparar = document.getElementById("li-comparar");
+  liComparar.style.fontWeight = "bold";
+
   let seccionMoviles = document.getElementById("seccion-moviles");
   let seccionOrdenadores = document.getElementById("seccion-ordenadores");
   let seccionConsolas = document.getElementById("seccion-consolas");
@@ -8,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function () {
   let res; // Variable para almacenar la respuesta de la API
 
   // Realiza una solicitud a la API utilizando fetch
-  fetch("/ComparadorGit/Controlador/paginainfocontrolador.php")
+  fetch("/ComparadorGit/Controlador/compararcontrolador.php")
     .then((respuesta) => respuesta.json())
     .then((data) => {
       res = data; // Almacena la respuesta en la variable res
@@ -188,24 +191,71 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionCoches.innerHTML = html;
   }
 
-  //Redireccionar a la página de paginainfo.php al pulsar en el buscador
-  const buscador = document.getElementById("buscador");
-
-  buscador.addEventListener("click", function () {
-    window.location.href = "../VistaUsuario/paginainfo.php";
-  });
-
+  // Hacer scroll en el carrusel con los botones
   var contenedor = document.getElementById("carrusel-dispositivos");
   var btnScrollDerecha = document.getElementById("btn-derecha");
-  var btnScrollIzquierda = document.getElementById("btn-izquierda"); 
+  var btnScrollIzquierda = document.getElementById("btn-izquierda");
 
   btnScrollDerecha.addEventListener("click", function () {
-    // mueve el scroll hacia la derecha
-    contenedor.scrollLeft += 200;
+    var scroll = contenedor.scrollLeft;
+    var nuevaPosicion = scroll + 300;
+    // Hacer un scroll suave
+    contenedor.scrollTo({
+      left: nuevaPosicion,
+      behavior: "smooth",
+    });
   });
 
-  btnScrollIzquierda.addEventListener("click", function(){
+  btnScrollIzquierda.addEventListener("click", function () {
+    var scroll = contenedor.scrollLeft;
+    var nuevaPosicion = scroll - 300;
+    contenedor.scrollTo({
+      left: nuevaPosicion,
+      behavior: "smooth",
+    });
+  });
 
-    contenedor.scrollLeft -= 200; 
-  })
+  var btnMovilesDer = document.getElementById("btn-derecha-moviles");
+  var btnMovilesIzq = document.getElementById("btn-izquierda-moviles");
+
+  btnMovilesDer.addEventListener("click", function () {
+    var scroll = seccionMoviles.scrollLeft;
+    var nuevaPosicion = scroll + 300;
+    seccionMoviles.scrollTo({
+      left: nuevaPosicion,
+      behavior: "smooth",
+    });
+  });
+
+  btnMovilesIzq.addEventListener("click", function () {
+    var scroll = seccionMoviles.scrollLeft;
+    var nuevaPosicion = scroll - 300;
+    seccionMoviles.scrollTo({
+      left: nuevaPosicion,
+      behavior: "smooth",
+    });
+  });
+
+  var btnOrdenadresDer = document.getElementById("btn-derecha-ordenadores"); 
+  var btnOrdenadoresIzq = document.getElementById("btn-izquierda-ordenadores")
+
+  btnOrdenadresDer.addEventListener("click", function () {
+    var scroll = seccionOrdenadores.scrollLeft;
+    var nuevaPosicion = scroll + 300;
+    seccionOrdenadores.scrollTo({
+      left: nuevaPosicion,
+      behavior: "smooth",
+    });
+  });
+
+  btnOrdenadoresIzq.addEventListener("click", function () {
+    var scroll = seccionOrdenadores.scrollLeft;
+    var nuevaPosicion = scroll - 300;
+    seccionOrdenadores.scrollTo({
+      left: nuevaPosicion,
+      behavior: "smooth",
+    });
+  });
+
+
 });

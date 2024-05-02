@@ -22,23 +22,15 @@
         <li id="li-graficas"><a href="">Gráficas</a></li>
 
         <li id="li-comparar"><a href="comparar.php">Comparar</a></li>
+
+        <li id="li-buscar"><a href="paginainfo.php">Buscar</a></li>
       </ul>
     </nav>
 
-    <div class="caja-buscador-login">
-      <div class="contenedor-buscador">
-        <input type="text" id="buscador" class="buscador" placeholder="Buscar un S.O." />
-
-        <div class="btn-buscar" id="btn-buscar">
-          <img src="../img/busqueda (1).png" alt="" width="23" height="23" />
-        </div>
-
-      </div>
-
-      <div class="sesionusuario">
-        <img src="../img/circulo-de-usuario (2).png" alt="" width="41" height="41">
-      </div>
+    <div class="sesionusuario">
+      <img src="../img/circulo-de-usuario (2).png" alt="" width="41" height="41">
     </div>
+
 
     <div class=" menu" id="menu">
       <img src="../img/menu-hamburguesa.png" alt="" width="25" height="25">
@@ -49,11 +41,14 @@
 
   <nav class=" nav-movil" id="nav-movil">
     <ul>
-      <li id="li-inicio"><a href="inicio.php#header">Inicio</a></li>
+      <li><a href="inicio.php#header">Inicio</a></li>
 
-      <li id="li-graficas">Gráficas</li>
+      <li><a href="">Gráficas</a></li>
 
-      <li id="li-comparar">Comparar</li>
+      <li><a href="comparar.php">Comparar</a></li>
+
+      <li><a href="paginainfo.php">Buscar</a></li>
+
     </ul>
   </nav>
 </body>
