@@ -24,7 +24,7 @@ class UsuarioDAOimplementar implements UsuarioDAO
         while ($reg = mysqli_fetch_array($consulta)) {
             $datosArray[] = $reg;
         }
-    
+
         return $datosArray;
     }
 
@@ -54,7 +54,6 @@ class UsuarioDAOimplementar implements UsuarioDAO
             // Verificar si la ejecución tuvo éxito
             if ($resultado) {
                 return $resultado;
-            } else {
             }
         } else {
             // Si la preparación falla, devolver un mensaje de error

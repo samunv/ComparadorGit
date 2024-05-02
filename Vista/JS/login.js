@@ -17,16 +17,21 @@ window.addEventListener("DOMContentLoaded", function () {
       .then((respuesta) => respuesta.json())
       .then((data) => {
         console.log(data);
+
         if (data.error) {
           alerta.style.display = "flex";
           btnAlerta.addEventListener("click", function () {
             alerta.style.display = "none";
           });
         } else {
-          window.location.href = "/ComparadorGit/Vista/VistaUsuario/inicio.php";
+          if (data.usuario.admin === 1) {
+            window.location.href =
+              "/ComparadorGit/Vista/VistaUsuario/paneldecontrol.php";
+          } else {
+            window.location.href =
+              "/ComparadorGit/Vista/VistaUsuario/inicio.php";
+          }
         }
       });
   });
-
- 
 });
