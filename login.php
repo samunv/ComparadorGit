@@ -7,7 +7,7 @@
     <title>OScomparer | Bienvenido</title>
     <link rel="icon" href="Vista/img/flechas-repetir (1).png">
     <link rel="stylesheet" href="Vista/CSS/login.css">
-    <script src="/ComparadorGit/Vista/JS/login.js"></script>
+    <script src="/ComparadorGit/Vista/JS/login.js?v=<?php echo time() ?>""></script>
 
    
 
@@ -27,12 +27,8 @@
     </form>
     
     <div class="contenedor-botones">
-        <a href="VistaUsuario/registro.html">
+        <a href="registro.php">
             <button type="submit" class="btn-registrarse">Registrarse</button>
-        </a>
-        <br></br>
-        <a href="VistaAdmin/loginadmin.html">
-            <button type="submit" class="btn-admin">Iniciar sesión como Administrador</button>
         </a>
     </div>
 
