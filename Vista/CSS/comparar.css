@@ -27,11 +27,11 @@ body {
 
 }
 
-#carrusel-dispositivos::-webkit-scrollbar{
+#carrusel-dispositivos::-webkit-scrollbar {
     background-color: #ececf0;
 }
 
-#botones-scroll{
+#botones-scroll {
     position: absolute;
     bottom: 5px;
     left: 85.8%;
@@ -39,14 +39,37 @@ body {
     flex-direction: row-reverse;
 
 }
-#botones-scroll #imagen-flecha2{
+
+#botones-scroll #imagen-flecha2 {
     transform: scaleX(-1);
 }
 
-#botones-scroll img:hover{
+#botones-scroll img:hover {
     opacity: 0.5;
     cursor: pointer;
 }
+.seccion-botones{
+width: 90px;
+margin-left: auto;
+margin-right: auto;
+display: flex;
+flex-direction: row-reverse;
+}
+
+
+.seccion-botones .botones:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.seccion-botones .izquierda{
+    transform: scaleX(-1);
+}
+
+
+
+
+
+
 
 .caja-carrusel {
     flex: 1 0 auto;
@@ -65,34 +88,81 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-#elemento-invisible{
+#elemento-invisible {
     background-color: #ececf0;
     width: 50px;
 }
 
-#elemento-invisible:hover{
+#elemento-invisible:hover {
     cursor: default;
     box-shadow: none;
 }
 
 
-.titulo {
+#seccion-porque-oscomaprer {
 
-    background-color: white;
-    height: 150px;
+    background-color: black;
+    height: 800px;
+    color: white;
+}
+
+
+
+#primer-h1 {
+    font-size: 50px;
+    width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.seccion-respuestas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.cajas-respuestas {
+    padding: 20px;
+    width: 400px;
+    border: 1px solid #424245;
+    background-color: #2d2d30;
+    border-radius: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.cajas-respuestas p {
+    padding: 10px;
+    width: 300px;
+    color: #ececf0;
+}
+
+.cajas-respuestas h2 {
+    padding: 10px;
+}
+
+.cajas-respuestas img {
+    padding: 30px;
+}
+
+.titulo {
+    margin-top: 100px;
     color: black;
     font-size: 20px;
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
 
 }
 
-.titulo h1 {
-    margin-left: 60px;
-}
 
 .iconos {
     margin-left: 10px;
@@ -101,13 +171,23 @@ body {
 .secciones {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
     align-items: center;
+    justify-content: space-around;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
 
+
+}
+
+.secciones::-webkit-scrollbar {
+    background-color: #ececf0;
 }
 
 .contenedores p {
@@ -122,11 +202,13 @@ body {
 }
 
 .contenedores {
+    flex: 1 0 auto;
     background-color: white;
     border-radius: 20px;
     color: grey;
     width: 400px;
     margin: 20px;
+    margin-top: 0%;
     padding: 20px;
     text-align: center;
     overflow: hidden;

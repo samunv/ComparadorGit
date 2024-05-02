@@ -101,6 +101,27 @@ h3 {
     margin: 10px;
 }
 
+.contenedor-comentarios-comparar {
+    width: 100px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparar {
+    cursor: pointer;
+    width: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+
+}
+
+.comparar:hover {
+    background-color: #ececf0;
+}
+
 .contenedores .comentarios {
     cursor: pointer;
     width: 45px;

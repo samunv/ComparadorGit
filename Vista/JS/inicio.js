@@ -1,4 +1,8 @@
 window.addEventListener("DOMContentLoaded", function () {
+  //Marcar el texto de inicio del nav cuando esté en esta página
+  let liInicio = document.getElementById("li-inicio");
+  liInicio.style.fontWeight = "bold";
+
   let seccionPrincipal = document.getElementById("seccion-principal");
 
   let res; // Variable para almacenar la respuesta de la API
@@ -37,16 +41,20 @@ window.addEventListener("DOMContentLoaded", function () {
         "' id='imagen" +
         i +
         "' class='imagenes' width='90' height='90'/>";
+      html += "<div class='contenedor-comentarios-comparar'>";
       html +=
         "<div id='comentario" +
         i +
         "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
+      html +=
+        "<div id='comparar" +
+        i +
+        "' class='comparar'><a href='../VistaUsuario/comparar.php'><img src='../img/flechas-repetir (3).png' alt='' width='25' height='25' title='comparar'></a></div>";
+      html += "</div>";
       html += "</div>";
     }
     seccionPrincipal.innerHTML = html;
   }
-
-
 
   function imprimirCeldas(datos, nombre1, nombre2, nombre3, nombre4) {
     let tr1 = document.getElementById("tr-1");
@@ -133,8 +141,6 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
-
   //Mostrar los detalles de las secciones cuadradas
   //Secciones
   let seccionAndroid = document.getElementById("seccionAndroid");
@@ -201,12 +207,5 @@ window.addEventListener("DOMContentLoaded", function () {
   btnOculto4.addEventListener("click", function () {
     seccionXbox.style.display = "block";
     seccionOculta4.style.display = "none";
-  });
-
-  //Redireccionar a la página de paginainfo.php al pulsar en el buscador
-  const buscador = document.getElementById("buscador");
-
-  buscador.addEventListener("click", function () {
-    window.location.href = "../VistaUsuario/paginainfo.php";
   });
 });
