@@ -35,10 +35,10 @@ class UsuarioDAOimplementar implements UsuarioDAO
         $sql = "INSERT INTO usuarios (nombreUsuario, email, contrasena) VALUES (?, ?, ?)";
 
         // Preparar la declaración SQL
-        $stmt = $this->conexion->prepare($sql);
+        $consulta = $this->conexion->prepare($sql);
 
         // Verificar si la preparación tiene éxito
-        if ($stmt) {
+        if ($consulta) {
             // Obtener las propiedades del objeto Usuarios
             $nombre = $usuario->getNombreUsuario();
             $email = $usuario->getEmail();
@@ -46,10 +46,10 @@ class UsuarioDAOimplementar implements UsuarioDAO
 
 
             // Vincular los parámetros con los valores proporcionados
-            $stmt->bind_param("sss", $nombre, $email, $contrasena);
+            $consulta->bind_param("sss", $nombre, $email, $contrasena);
 
             // Ejecutar la declaración
-            $resultado = $stmt->execute();
+            $resultado = $consulta->execute();
 
             // Verificar si la ejecución tuvo éxito
             if ($resultado) {
@@ -60,6 +60,9 @@ class UsuarioDAOimplementar implements UsuarioDAO
             return "Error al preparar la consulta";
         }
     }
+
+
+
     public function eliminarUsuario(Usuarios $usuario)
     {
     }

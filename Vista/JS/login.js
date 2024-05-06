@@ -24,7 +24,8 @@ window.addEventListener("DOMContentLoaded", function () {
             alerta.style.display = "none";
           });
         } else {
-          if (data.usuario.admin === 1) {
+          if (data.usuario[0].admin === "1") {
+            //Entrar como administrador si el campo admin vale 1
             window.location.href =
               "/ComparadorGit/Vista/VistaUsuario/paneldecontrol.php";
           } else {

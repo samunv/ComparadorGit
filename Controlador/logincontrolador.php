@@ -1,4 +1,5 @@
 <?php
+
 $nombre = $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
 
@@ -11,9 +12,8 @@ $datosUsuario = $daoUsuarioImp->leerUsuario($nombre, $contrasena);
 $array = array();
 
 if (!empty($datosUsuario)) {
-    // Si se encuentra el usuario, se añaden sus datos al array de respuesta
+    // Si se encuentra el usuario, se añaden sus datos al array
     $array["usuario"] = $datosUsuario;
-
 } else {
     // Si no encuentra un usuario con esos datos, mandar un error
     $array["error"] = "Error";

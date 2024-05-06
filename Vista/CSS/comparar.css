@@ -48,20 +48,22 @@ body {
     opacity: 0.5;
     cursor: pointer;
 }
-.seccion-botones{
-width: 90px;
-margin-left: auto;
-margin-right: auto;
-display: flex;
-flex-direction: row-reverse;
+
+.seccion-botones {
+    width: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 
-.seccion-botones .botones:hover{
+.seccion-botones .botones:hover {
     opacity: 0.5;
     cursor: pointer;
 }
-.seccion-botones .izquierda{
+
+.seccion-botones .izquierda {
     transform: scaleX(-1);
 }
 
@@ -99,23 +101,22 @@ flex-direction: row-reverse;
 }
 
 
-#seccion-porque-oscomaprer {
+#seccion-porque-oscomparer {
 
     background-color: black;
-    height: 800px;
     color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
 
 #primer-h1 {
     font-size: 50px;
-    width: 600px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px;
+    color: grey;
 }
 
 .seccion-respuestas {
@@ -124,6 +125,7 @@ flex-direction: row-reverse;
     justify-content: center;
     flex-direction: row;
     align-items: stretch;
+    padding-bottom: 100px;
 }
 
 .cajas-respuestas {
@@ -145,10 +147,14 @@ flex-direction: row-reverse;
     padding: 10px;
     width: 300px;
     color: #ececf0;
+    font-size: large;
+    text-align: left;
 }
 
 .cajas-respuestas h2 {
     padding: 10px;
+    text-align: left;
+    width: 300px;
 }
 
 .cajas-respuestas img {
@@ -160,8 +166,13 @@ flex-direction: row-reverse;
     color: black;
     font-size: 20px;
     text-align: left;
-    margin-left: 73px;
+    margin-left: 65px;
 
+}
+
+.texto-explicativo h3 {
+    margin-left: 65px;
+    color: grey;
 }
 
 
@@ -224,13 +235,142 @@ flex-direction: row-reverse;
 .contenedores .comentarios {
     cursor: pointer;
     width: 45px;
-    margin-left: auto;
-    margin-right: auto;
     transition: all 0.3s ease;
     border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
+
+
+
 .contenedores .comentarios:hover {
     background-color: #ececf0;
+}
+
+.contenedores:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ventana-comparacion {
+    background-color: white;
+    border: 1px solid rgb(146, 145, 145);
+    color: grey;
+    height: 500px;
+    width: 1300px;
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+
+}
+
+.ventana-comparacion h1 {
+    padding: 20px;
+    color: black;
+}
+
+canvas {
+    margin-left: 20px;
+}
+
+.ventana-comparacion .cajas-so ul li {
+    list-style: none;
+    padding: 5px;
+}
+
+.ventana-comparacion .cajas-so img,
+h1,
+h3 {
+    padding: 5px;
+}
+
+.ventana-comparacion .cajas-so {
+    padding: 20px;
+}
+
+.caja-general {
+    display: flex;
+    flex-direction: row;
+}
+
+#btn-cerrar {
+    color: white;
+    background-color: #0071e3;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+#btn-cerrar:hover {
+
+    background-color: transparent;
+    color: #0071e3;
+}
+
+@media(max-width: 500px) {
+
+    *{
+        padding-right: 0%;
+    }
+    body{
+        width: 430px;
+    }
+
+    #botones-scroll {
+        display: none;
+    }
+
+    .ventana-comparacion {
+        width: 300px;
+        height: auto;
+        font-size: smaller;
+    }
+
+    .caja-general {
+        width: 300px;
+        overflow-x: hidden;
+        overflow-y:visible;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor-canvas {
+        width: 100px;
+        height: 50px;
+        display: none;
+    }
+
+    #so1 img, #so2 img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .titulo{
+        margin-left: 20px;
+        font-size: smaller;
+    }
+
+    .texto-explicativo h3 {
+        margin-left: 20px; 
+        font-size: smaller;
+    }
+    
+    .secciones{
+        padding-left: 20px;
+    }
 }
