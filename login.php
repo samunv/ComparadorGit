@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OScomparer | Bienvenido</title>
     <link rel="icon" href="Vista/img/flechas-repetir (1).png">
-    <link rel="stylesheet" href="Vista/CSS/login.css">
-    <script src="/ComparadorGit/Vista/JS/login.js?v=<?php echo time() ?>""></script>
-
-   
-
+    <link rel="stylesheet" href="Vista/CSS/login.css?v=<?php echo time() ?>">
+    <script src="/ComparadorGit/Vista/JS/login.js?v=<?php echo time() ?>"></script>
 </head>
-
 <body>
+
+    <section id="seccion-bienvenida">
+        hola
+    </section>
     <div id="logo">
         <img src="Vista/img/OScomparerlogogrande.png" alt="" width="400" height="150">
     </div>
@@ -25,7 +25,7 @@
         <input type="password" id="contrasena" name="contrasena" required placeholder="Contraseña"><br>
         <button type="submit" class="btn-iniciarsesion">Iniciar sesión</button>
     </form>
-    
+
     <div class="contenedor-botones">
         <a href="registro.php">
             <button type="submit" class="btn-registrarse">Registrarse</button>
