@@ -8,7 +8,7 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
     public function __construct()
     {
         $servidor = "localhost";
-        $usuario = "samu";
+        $usuario = "Jorge";
         $contrasena_bd = "12345";
         $base_de_datos = "comparadorprueba";
 
