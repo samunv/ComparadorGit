@@ -3,7 +3,7 @@ require_once "AdministradorDAO.php";
 class AdministradorDAOimplementar implements AdministradorDAO{
 
     private $servidor = "localhost";
-    private $usuario_bd = "samu";
+    private $usuario_bd = "Jorge";
     private $contrasena_bd = "12345";
     private $nombre_bd = "comparadorPrueba";
     private $conexion;

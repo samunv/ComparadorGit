@@ -2,7 +2,7 @@
 // Verificar si se ha enviado el formulario de inicio de sesión
 if (isset($_POST["nombre"]) && isset($_POST["contrasena"])) {
     $servidor = "localhost";
-    $usuario_bd = "samu";
+    $usuario_bd = "Jorge";
     $contrasena_bd = "12345";
     $nombre_bd = "comparadorPrueba";
 
