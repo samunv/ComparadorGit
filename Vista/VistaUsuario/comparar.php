@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../CSS/estilofooter.css?v=<?php echo time() ?>">
     <link rel="icon" href="../img/flechas-repetir (1).png" />
     <script src="../JS/comparar.js?v=<?php echo time(); ?>"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 
 </head>
 
@@ -34,7 +35,7 @@
     </section>
 
 
-    <section id="seccion-porque-oscomaprer">
+    <section id="seccion-porque-oscomparer">
 
         <h1 class="texto-porque-oscomparer" id="primer-h1">¿Por qué OScomparer?</h1>
         <div class="seccion-respuestas">
@@ -42,9 +43,9 @@
                 <h2>Sistema de Puntos</h2>
                 <p>Utilizamos un Sistema de Puntos para comparar los SO. Dependerán de factores como:
                     <br>
-                    La seguridad: 10 puntos por punto de seguridad.
+                    La seguridad: 15 puntos por punto de seguridad.
                     <br>
-                    La comunidad: 1 punto por cada Millón.
+                    La comunidad: 0.5 puntos por cada Millón.
                     <br>
                     Estatus: 10 puntos si es gratis.
                 </p>
@@ -52,12 +53,12 @@
             </div>
             <div class="cajas-respuestas">
                 <h2>Gráficas</h2>
-                <p>Nuestro Sistema de Gráficas permite visualizar mejor, y a simple vista, las comparaciones de varios SO a la misma vez. Podrás ver gráficas de puntuación, de seguridad o de comunidad.</p>
+                <p>Nuestro Sistema de Gráficas permite visualizar mejor, y a simple vista, las comparaciones los distintos SO. Las gráficas mostrarán los puntos de los SO de una forma mucho más visual.</p>
                 <img src="../img/grafico-histograma.png" alt="" width="100" height="100">
             </div>
             <div class="cajas-respuestas">
                 <h2>Tu Opinión Importa</h2>
-                <p>En OScomparer, puedes escribir y publicar comentarios opinando de los distintos Sistemas Operativos. Los usuarios tendrán en cuenta tu opinión a la hora de comaprar un SO con otro.</p>
+                <p>En OScomparer, puedes compartir comentarios opinando de los distintos SO. Los usuarios tendrán en cuenta tu opinión a la hora de comparar un SO con otro.</p>
                 <img src="../img/comentario-alt (1).png" alt="" width="100" height="100">
             </div>
         </div>
@@ -68,6 +69,9 @@
     <section id="titulo-moviles" class="titulo">
         <h1>Sistemas Operativos de Móviles</h1>
     </section>
+    <section class="texto-explicativo">
+        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+    </section>
 
     <section id="seccion-moviles" class="secciones"></section>
     <section class="seccion-botones">
@@ -75,10 +79,17 @@
         <div id="btn-izquierda-moviles" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
     </section>
 
-    
+
+
+    <div id="ventana-comparacion" class="ventana-comparacion">comparar</div>
+
+
 
     <section id="titulo-ordenadores" class="titulo">
         <h1>Sistemas Operativos de Ordenadores</h1>
+    </section>
+    <section class="texto-explicativo">
+        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
     </section>
 
     <section id="seccion-ordenadores" class="secciones"></section>
@@ -93,24 +104,49 @@
     <section id="titulo-consolas" class="titulo">
         <h1>Sistemas Operativos de Consolas</h1>
     </section>
-
+    <section class="texto-explicativo">
+        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+    </section>
 
 
     <section id="seccion-consolas" class="secciones"></section>
+
+    <section class="seccion-botones">
+        <div id="btn-derecha-consolas" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
+        <div id="btn-izquierda-consolas" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
+    </section>
 
 
 
     <section id="titulo-tv" class="titulo">
         <h1>Sistemas Operativos de TVs</h1>
     </section>
+    <section class="texto-explicativo">
+        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+    </section>
 
     <section id="seccion-tv" class="secciones"></section>
+
+    <section class="seccion-botones">
+        <div id="btn-derecha-tv" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
+        <div id="btn-izquierda-tv" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
+    </section>
+
+
 
     <section id="titulo-coches" class="titulo">
         <h1>Sistemas Operativos de Coches</h1>
     </section>
+    <section class="texto-explicativo">
+        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+    </section>
 
     <section id="seccion-coches" class="secciones"></section>
+
+    <section class="seccion-botones">
+        <div id="btn-derecha-coches" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
+        <div id="btn-izquierda-coches" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
+    </section>
 
 
 

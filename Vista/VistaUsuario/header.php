@@ -19,8 +19,6 @@
       <ul>
         <li id="li-inicio"><a href="inicio.php#header">Inicio</a></li>
 
-        <li id="li-graficas"><a href="">Gráficas</a></li>
-
         <li id="li-comparar"><a href="comparar.php">Comparar</a></li>
 
         <li id="li-buscar"><a href="paginainfo.php">Buscar</a></li>
@@ -28,7 +26,7 @@
     </nav>
 
     <div class="sesionusuario">
-      <img src="../img/circulo-de-usuario (2).png" alt="" width="41" height="41">
+      <img src="../img/usuario (2).png" alt="" width="41" height="41">
     </div>
 
 
@@ -42,8 +40,6 @@
   <nav class=" nav-movil" id="nav-movil">
     <ul>
       <li><a href="inicio.php#header">Inicio</a></li>
-
-      <li><a href="">Gráficas</a></li>
 
       <li><a href="comparar.php">Comparar</a></li>
 

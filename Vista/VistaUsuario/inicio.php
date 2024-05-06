@@ -22,7 +22,7 @@
   <section class="seccion-presentacion" id="seccion-presentacion">
     <div class="botones-presentacion">
       <h1>Compara con ayuda de Gráficas</h1>
-      <button type="button" id="btn-graficas">Ir a Gráficas</button>
+     <a href="comparar.php"> <button type="button" id="btn-graficas">Comparar</button></a>
     </div>
     <div class="imagen-presentacion">
       <img src="../img/dibujo-grafico-de-linea.png" alt="" />
@@ -205,8 +205,6 @@
     </section>
 
   </section>
-
-
 
 
   <?php
