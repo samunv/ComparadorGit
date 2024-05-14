@@ -14,11 +14,11 @@
     <h1>Bienvenido/a</h1>
     <form class="formulario" id="formularioRegistro">
         <label for="nombreNuevo">Nombre de Usuario</label>
-        <input type="text" id="nombreNuevo" name="nombreNuevo" required placeholder="Nombre" /><br />
+        <input type="text" id="nombreNuevo" name="nombreNuevo" required placeholder="Nombre" maxlength="15"/><br />
         <label for="contrasenaNueva">Contraseña</label>
-        <input type="password" id="contrasenaNueva" name="contrasenaNueva" required placeholder="Contraseña" /><br />
+        <input type="password" id="contrasenaNueva" name="contrasenaNueva" required placeholder="Contraseña" maxlength="15"/><br />
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="Email" /><br />
+        <input type="email" id="email" name="email" required placeholder="Email" minlength="10" maxlength="25" /><br />
         <button type="submit" class="btn-registrarse">Registrarse</button>
     </form>
     <a href="login.php">

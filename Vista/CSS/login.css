@@ -7,9 +7,6 @@ body {
     font-family: 'San Francisco', sans-serif;
 }
 
-.logo{
-    border: 1px red solid;
-}
 #alerta{
     background-color: #ececf0;
     width: 500px;
@@ -130,9 +127,5 @@ body {
     text-align: center;
     font-size: smaller;
     margin-top: 50px;
-}
-
-#seccion-bienvenida{
-    background-color: black;
-    height: 800px;
+    margin-bottom: 50px;
 }

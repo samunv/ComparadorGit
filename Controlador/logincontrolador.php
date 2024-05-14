@@ -1,4 +1,11 @@
 <?php
+/**
+ * @param UsuarioDAOimplementar $daoUsuarioImp Objeto de la clase SistemaOperativoDAOimplementar
+ * @param String $nombre Almacena el nombre en el array $_POST
+ * @param String $contrasena Almacena la contraseña en el array $_POST  
+ * @param array $datosUsuario Almacena el array obtenido del objeto $daoUsuarioImp
+ * @param array $datos array en formato json de los datos obtenidos de la funcion leerSO() del objeto $daoSoImp
+ */
 
 $nombre = $_POST["nombre"];
 $contrasena = $_POST["contrasena"];

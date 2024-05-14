@@ -11,9 +11,6 @@
 </head>
 <body>
 
-    <section id="seccion-bienvenida">
-        hola
-    </section>
     <div id="logo">
         <img src="Vista/img/OScomparerlogogrande.png" alt="" width="400" height="150">
     </div>

@@ -4,7 +4,168 @@
 }
 
 body {
-    font-family: sans-serif;
     background-color: #ececf0;
+    font-family: "San Francisco", Arial, sans-serif;
+    overflow-x: hidden;
 
+}
+
+
+
+h1 {
+    text-align: center;
+    padding: 30px;
+    padding-top: 90px;
+    font-size: 50px;
+}
+
+h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    font-size: larger;
+
+
+}
+
+
+#seccion-1 {
+    overflow: hidden;
+    display: flex;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.contenedores-seccion1 {
+    width: 48%;
+    height: 150px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.contenedores-seccion1:hover {
+    filter: grayscale(40%);
+}
+
+.secciones h1 {
+    text-align: center;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    font-size: 50px;
+    padding-top: 100px;
+    margin-top: 10px;
+}
+
+
+#seccion-contenedores {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#contenedor-subir:hover {
+    cursor: pointer;
+}
+
+.contenedores {
+
+    background-color: white;
+    border-radius: 20px;
+    color: grey;
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+
+
+}
+
+
+.contenedores p {
+    margin-bottom: 5px;
+
+}
+
+.contenedores img {
+    margin: 10px;
+}
+
+.contenedor-editar {
+    width: 100px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedores .actualizar,
+.eliminar {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+
+}
+
+
+#contenedor-subir {
+    background-color: #0071e3;
+}
+
+#ventana-eliminar-oculta {
+    background-color: white;
+    width: 600px;
+    padding: 10px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    border: 1px black solid;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#ventana-eliminar-oculta h2{
+    width: 500px;
+    text-align: center;
+    padding: 30px;
+}
+
+.caja-botones {
+    width: 300px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+
+}
+
+.caja-botones button {
+    color: white;
+    background-color: #0071e3;
+    border: 2px #0071e3 solid;
+    border-radius: 30px;
+    padding: 10px 30px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.caja-botones button:hover{
+    background-color: transparent;
+    border: #0071e3 2px solid;
+    color: #0071e3;
 }

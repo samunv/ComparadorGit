@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", function () {
   let navMovil = document.getElementById("nav-movil");
   let navActivo = false;
 
+
   menu.addEventListener("click", function () {
     if (!navActivo) {
       navMovil.style.display = "flex";

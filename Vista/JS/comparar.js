@@ -8,9 +8,10 @@ window.addEventListener("DOMContentLoaded", function () {
   let seccionTv = document.getElementById("seccion-tv");
   let seccionCoches = document.getElementById("seccion-coches");
 
+
   let res; // Variable para almacenar la respuesta
 
-  fetch("/ComparadorGit/Controlador/compararcontrolador.php")
+  fetch("./../../Controlador/compararcontrolador.php")
     .then((respuesta) => respuesta.json())
     .then((data) => {
       res = data; // Almacena la respuesta en la variable res
@@ -72,16 +73,16 @@ window.addEventListener("DOMContentLoaded", function () {
 
         contenedor.addEventListener("click", function seleccionar() {
           if (seleccionados.includes(datos[i])) {
-            // Si el dispositivo ya está seleccionado, lo deseleccionamos
+            // Si el dispositivo ya está seleccionado, lo deseleccionamos quitando css
             contenedor.style.borderWidth = "";
             contenedor.style.borderStyle = "";
             contenedor.style.borderColor = "";
             seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
           } else if (seleccionados.length < 2) {
-            // Si aún no se han seleccionado dos dispositivos, seleccionamos este
-            contenedor.style.borderWidth = "2px"; // Grosor del borde
-            contenedor.style.borderStyle = "solid"; // Estilo del borde
-            contenedor.style.borderColor = "#0071e3"; // Color del borde
+            // Si aún no se han seleccionado dos dispositivos, se seleccionan añadiendo css
+            contenedor.style.borderWidth = "2px"; 
+            contenedor.style.borderStyle = "solid"; 
+            contenedor.style.borderColor = "#0071e3";
             seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
           } else {
             alert(
@@ -490,7 +491,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //caja para todos los elementos
     html += "<div class='caja-general'>";
-
 
     //Caja para el primer SO
     html += "<div id='so1' class='cajas-so'>";

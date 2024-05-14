@@ -26,6 +26,7 @@ h3 {
 
 
 .seccion-presentacion {
+    padding: 50px;
     background-color: black;
     display: flex;
     flex-direction: row;
@@ -38,6 +39,7 @@ h3 {
 .seccion-presentacion .imagen-presentacion {
     width: 400px;
     overflow: hidden;
+    margin-top: 50px;
 
 }
 
@@ -51,11 +53,12 @@ h3 {
     background-color: #0071e3;
     border: 2px #0071e3 solid;
     border-radius: 30px;
-    padding: 15px 30px;
-    width: 270px;
+    padding: 10px 30px;
+    width: 200px;
     transition: all 0.5s ease;
     cursor: pointer;
     font-size: 18px;
+    margin-top: 20px;
 
 }
 
@@ -66,14 +69,17 @@ h3 {
 }
 
 .botones-presentacion {
-    width: 450px;
+    width: 470px;
     height: 200px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
     align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .botones-presentacion h1 {
@@ -84,6 +90,50 @@ h3 {
 
 }
 
+.seccion-presentacion2 {
+    height: 450px;
+    background-color: white;
+    /* Azul claro */
+    background-image: linear-gradient(to bottom, #7ec8e3, #ececf0);
+    /* Degradado hacia blanco */
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.seccion-presentacion2 h1 {
+    width: 470px;
+    text-align: center;
+    font-size: 50px;
+}
+
+#span-comunidad{
+    color: #0b7297;
+}
+
+
+
+.seccion-presentacion2 .caja-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagenes-top {
+    padding: 40px;
+}
+
+#datos-top-so #tabla-top {
+    color: #6c767a;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 50px;
+}
 
 .contenedores {
     background-color: white;
@@ -139,8 +189,9 @@ h3 {
 
 .texto-descubre {
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     margin-bottom: 40px;
+    margin-top: 50px;
 }
 
 .seccion-cajas-info {
@@ -164,7 +215,7 @@ h3 {
     background-color: #0071e3;
     border: 2px #0071e3 solid;
     border-radius: 30px;
-    padding: 15px 30px;
+    padding: 10px 30px;
     transition: all 0.5s ease;
     cursor: pointer;
     font-size: 18px;
@@ -183,7 +234,7 @@ h3 {
 
 .seccion-cuadrado {
     background-color: white;
-    margin-top: 50px;
+    
     margin-bottom: 50px;
     width: 1400px;
     height: 400px;
@@ -193,15 +244,6 @@ h3 {
     overflow: hidden;
 }
 
-.texto-deMoviles {
-    text-align: center;
-    font-size: 40px;
-    width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-
-}
 
 .seccion-cuadrado2 {
     overflow: hidden;
@@ -210,7 +252,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 150px;
     margin-bottom: 15px;
     flex-wrap: wrap;
 }
@@ -291,7 +333,7 @@ h3 {
     background-color: white;
     border: 2px #0071e3 solid;
     border-radius: 30px;
-    padding: 15px 30px;
+    padding: 10px 30px;
 
     transition: all 0.5s ease;
     cursor: pointer;
@@ -356,7 +398,7 @@ h3 {
     background-color: white;
     border: 2px #0071e3 solid;
     border-radius: 30px;
-    padding: 15px 30px;
+    padding: 10px 30px;
 
     transition: all 0.5s ease;
     cursor: pointer;
@@ -375,7 +417,7 @@ h3 {
     background-color: white;
     border: 2px #0071e3 solid;
     border-radius: 30px;
-    padding: 15px 30px;
+    padding: 10px 30px;
 
     transition: all 0.5s ease;
     cursor: pointer;
@@ -392,8 +434,9 @@ h3 {
 
 .texto-deConsolas {
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     width: 1400px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
@@ -403,19 +446,19 @@ h3 {
 .seccion-cuadrado3 {
     overflow: hidden;
     display: flex;
-    width: 1400px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    justify-content: space-between;
-    margin-top: 60px;
+    justify-content: space-evenly;
+    margin-top: 40px;
     margin-bottom: 15px;
     flex-wrap: wrap;
 }
 
 .seccionPS5 {
-    width: 48%;
-    height: 500px;
-    border-radius: 20px;
+    width: 49%;
+    height: 550px;
+    /*border-radius: 20px;*/
     background-color: white;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -426,9 +469,9 @@ h3 {
 
 .seccionXbox {
     background-color: white;
-    width: 48%;
-    height: 500px;
-    border-radius: 20px;
+    width: 49%;
+    height: 550px;
+    /*border-radius: 20px;*/
     overflow: hidden;
     transition: all 0.4s ease;
 
@@ -437,18 +480,17 @@ h3 {
 .seccionPS5:hover,
 .seccionXbox:hover {
     cursor: pointer;
-    opacity: 0.7;
+    filter:brightness(70%);
 }
 
 #seccionPS5-oculta,
 #seccionXbox-oculta {
     display: none;
     background-color: white;
-    width: 48%;
-    height: 500px;
-    border-radius: 20px;
+    width: 49%;
     background-color: white;
     overflow: hidden;
+    height: 550px;
 }
 
 #contenedor-oculto3,
@@ -457,7 +499,7 @@ h3 {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 90px;
 }
 
 .texto-ps5,
@@ -494,7 +536,7 @@ h3 {
     background-color: white;
     border: 2px #0071e3 solid;
     border-radius: 30px;
-    padding: 15px 30px;
+    padding: 10px 30px;
 
     transition: all 0.5s ease;
     cursor: pointer;
@@ -526,35 +568,56 @@ h3 {
     .seccion-presentacion .imagen-presentacion {
         margin-left: auto;
         margin-right: auto;
-        width: 150px;
+        width: 200px;
         padding-bottom: 10px;
+        margin-top: 10px;
     }
 
     .seccion-presentacion .imagen-presentacion img {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
 
     }
 
-    .botones-presentacion button {
+    .contenedores{
+        font-size: smaller;
+        padding: 15px;
+    }
+    
+    .contenedor-comentarios-comparar {
+        width: 100px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+
+
+
+   button {
         color: white;
+        width: 100px;
         background-color: #0071e3;
         border: 2px #0071e3 solid;
         border-radius: 30px;
-        padding: 15px 30px;
-        width: 190px;
+        padding: 10px 20px;
+        overflow: hidden;
+        font-size: 13px;
+        text-align: center;
 
     }
 
     .botones-presentacion {
         width: 300px;
         height: 190px;
-        margin-left: auto;
-        margin-right: auto;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: space-evenly;
+        margin-top: 0px;
+        padding: 10px;
     }
 
     .botones-presentacion h1 {
@@ -563,6 +626,7 @@ h3 {
         font-size: 25px;
 
     }
+
 
     .seccion-cuadrado {
         background-color: white;
@@ -586,10 +650,16 @@ h3 {
     }
 
     .contenedores {
-        width: 400px;
+        width: 190px;
         margin-left: 0;
         margin-right: 0;
     }
+
+    .contenedores .imagenes{
+        width: 50px;
+        height: 50px;
+    }
+
 
     .seccion-cuadrado2 {
         display: none;
@@ -597,6 +667,35 @@ h3 {
 
     .seccion-cuadrado3 {
         display: none;
+    }
+    .seccion-presentacion2{
+        width: 100%;
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .seccion-presentacion2 h1{
+        font-size: 25px;
+        width: 200px;
+    }
+
+    #datos-top-so #tabla-top img{
+        width: 50px;
+        height: 50px;
+    }
+    #datos-top-so #tabla-top{
+        font-size: smaller;
+        padding: 10px;
+    }
+    
+    
+    
+    .imagenes-top {
+        padding: 20px;
+    }
+
+    .texto-descubre{
+        font-size: 25px;
     }
 
 

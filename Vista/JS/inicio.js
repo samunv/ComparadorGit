@@ -8,13 +8,15 @@ window.addEventListener("DOMContentLoaded", function () {
   let res; // Variable para almacenar la respuesta de la API
 
   // Realiza una solicitud a la API utilizando fetch
-  fetch("/ComparadorGit/Controlador/paginainfocontrolador.php")
+  fetch("./../../Controlador/paginainfocontrolador.php")
     .then((respuesta) => respuesta.json())
     .then((data) => {
       res = data; // Almacena la respuesta en la variable res
       console.log(res);
+      //Llamamos a las funciones para pasarles res como parámetro
       imprimirContenedores(res);
       imprimirCeldas(res, "Android 14", "iOS 17", "PS5 OS", "Xbox OS 21H2");
+      imprimirTop(res);
     })
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
@@ -35,6 +37,7 @@ window.addEventListener("DOMContentLoaded", function () {
       html += "<p>Dispositivos: " + datos[i].dispositivos + "</p>";
       html += "<p>Gratis: " + datos[i].gratis + "</p>";
       html += "</div>";
+      console.log(datos[i].imagen);
       html +=
         "<img src='" +
         datos[i].imagen +
@@ -107,6 +110,39 @@ window.addEventListener("DOMContentLoaded", function () {
     tr2.innerHTML = html2;
     tr3.innerHTML = html3;
     tr4.innerHTML = html4;
+  }
+
+  function imprimirTop(datos) {
+    let cajaTop = document.getElementById("datos-top-so");
+    let html = "<table id='tabla-top'>";
+
+    datos.sort((a, b) => b.comunidad - a.comunidad);
+
+    // Suponiendo que datos es un arreglo de objetos con propiedades 'imagen' y 'nombre'
+    html += "<tr>";
+    for (let i = 0; i < 3; i++) {
+      if (datos[i].comunidad >= 1000) {
+        html +=
+          "<td><img src='" +
+          datos[i].imagen +
+          "' alt='so-top' title='" +
+          datos[i].nombre +
+          "' width='100' height='100' class='imagenes-top'></td>";
+      }
+    }
+    html += "</tr>";
+
+    html += "<tr>";
+    for (var i = 0; i < 3; i++) {
+      if (datos[i].comunidad >= 1000){
+        html += "<td> Top "+ (i + 1) + " <br>" + datos[i].nombre + "<br>"+datos[i].comunidad+" Mill.</td>";
+      }
+     
+    }
+    html += "</tr>";
+
+    html += "</table>";
+    cajaTop.innerHTML = html;
   }
 
   var imagenes = [
