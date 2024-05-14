@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //console.log(datos.get("nombre"));
 
-    fetch("/ComparadorGit/Controlador/logincontrolador.php", {
+    fetch("./Controlador/logincontrolador.php", {
       method: "POST",
       body: datos,
     })
@@ -24,13 +24,29 @@ window.addEventListener("DOMContentLoaded", function () {
             alerta.style.display = "none";
           });
         } else {
+          //Guardamos el nombre de usuario del json recibido en nombreUsuario
+          var nombreUsuario = data.usuario[0].nombreUsuario;
+
+          // ---------------------Guardar los datos en la sesión---------------------
+
+          /*Utilizamos el objeto sessionStorage, el cual almacena temporalmente datos en el lado del cliente (en nuestro caso, el nombre de usuario y 
+            los permisos del Admin)
+           cuando la sesión en el navegador esté activada. Si se cierran als pestañas, se perderán los datos*/
+
+          //El método setItem() almacena el nombre del usuario (nombreUsuario) con la clave "nombreUsuario"
+          sessionStorage.setItem("nombreUsuario", nombreUsuario);
+
+          var permisosAdmin = data.usuario[0].admin;
+          console.log("Permisos de administrador:", permisosAdmin);
+
           if (data.usuario[0].admin === "1") {
             //Entrar como administrador si el campo admin vale 1
+            sessionStorage.setItem("permisosAdmin", permisosAdmin);
             window.location.href =
-              "/ComparadorGit/Vista/VistaUsuario/paneldecontrol.php";
+              "./Vista/VistaUsuario/paneldecontrol.php";
           } else {
             window.location.href =
-              "/ComparadorGit/Vista/VistaUsuario/inicio.php";
+              "./Vista/VistaUsuario/inicio.php";
           }
         }
       });

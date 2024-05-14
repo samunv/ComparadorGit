@@ -4,8 +4,8 @@ class UsuarioDAOimplementar implements UsuarioDAO
 {
 
     private $servidor = "localhost";
-    private $usuario_bd = "samu";
-    private $contrasena_bd = "12345";
+    private $usuario_bd = "samu2";
+    private $contrasena_bd = "123ABC=e";
     private $nombre_bd = "comparadorPrueba";
     private $conexion;
 
@@ -27,7 +27,6 @@ class UsuarioDAOimplementar implements UsuarioDAO
 
         return $datosArray;
     }
-
 
 
     public function crearUsuario(Usuarios $usuario)

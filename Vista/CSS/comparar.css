@@ -23,6 +23,7 @@ body {
     padding: 10px;
     padding-left: 50px;
     padding-right: 50px;
+    padding-top: 64px;
     margin-bottom: 50px;
 
 }
@@ -114,7 +115,7 @@ body {
 #primer-h1 {
     font-size: 50px;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 50px;
     color: grey;
 }
@@ -125,14 +126,14 @@ body {
     justify-content: center;
     flex-direction: row;
     align-items: stretch;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
 }
 
 .cajas-respuestas {
-    padding: 20px;
-    width: 400px;
+    padding: 15px;
+    width: 350px;
     border: 1px solid #424245;
-    background-color: #2d2d30;
+    background-color: #28282a;
     border-radius: 20px;
     margin: 20px;
     display: flex;
@@ -146,7 +147,6 @@ body {
 .cajas-respuestas p {
     padding: 10px;
     width: 300px;
-    color: #ececf0;
     font-size: large;
     text-align: left;
 }
@@ -162,9 +162,10 @@ body {
 }
 
 .titulo {
-    margin-top: 100px;
+    margin-top: 50px;
+    padding-top: 100px;
     color: black;
-    font-size: 20px;
+    font-size: 30px;
     text-align: left;
     margin-left: 65px;
 
@@ -256,7 +257,8 @@ body {
 
 .ventana-comparacion {
     background-color: white;
-    border: 1px solid rgb(146, 145, 145);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
     color: grey;
     height: 500px;
     width: 1300px;
@@ -308,7 +310,7 @@ h3 {
     background-color: #0071e3;
     border: 2px #0071e3 solid;
     border-radius: 30px;
-    padding: 15px 30px;
+    padding: 10px 30px;
     transition: all 0.5s ease;
     cursor: pointer;
     font-size: 18px;
@@ -324,15 +326,36 @@ h3 {
 
 @media(max-width: 500px) {
 
-    *{
+    * {
         padding-right: 0%;
     }
-    body{
+
+    body {
         width: 430px;
     }
 
     #botones-scroll {
         display: none;
+    }
+
+    .caja-carrusel {
+        width: 200px;
+        height: 350px;
+        margin: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .caja-carrusel img {
+        width: 200px;
+        height: 350px;
+    }
+
+
+    #carrusel-dispositivos {
+        height: 400px;
+        padding-top: 20px;
+        margin-bottom: 10px;
     }
 
     .ventana-comparacion {
@@ -344,9 +367,13 @@ h3 {
     .caja-general {
         width: 300px;
         overflow-x: hidden;
-        overflow-y:visible;
+        overflow-y: visible;
         flex-direction: column;
         align-items: center;
+    }
+
+    .contenedores{
+        width: 230px;
     }
 
     .contenedor-canvas {
@@ -355,22 +382,69 @@ h3 {
         display: none;
     }
 
-    #so1 img, #so2 img {
+    #so1 img,
+    #so2 img {
         width: 30px;
         height: 30px;
     }
 
-    .titulo{
+    .titulo {
         margin-left: 20px;
         font-size: smaller;
     }
 
     .texto-explicativo h3 {
-        margin-left: 20px; 
+        margin-left: 20px;
         font-size: smaller;
     }
-    
-    .secciones{
+
+    .secciones {
         padding-left: 20px;
     }
+
+    .seccion-botones {
+        display: none;
+    }
+
+    #primer-h1 {
+        font-size: 25px;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #seccion-porque-oscomparer {
+
+        background-color: black;
+        color: white;
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+    
+
+    .cajas-respuestas {
+
+        width: 200px;
+
+
+    }
+
+    .cajas-respuestas p {
+
+        width: 190px;
+        font-size: smaller;
+
+    }
+
+    .cajas-respuestas h2 {
+        font-size: small;
+        width: 190px;
+    }
+
+    .cajas-respuestas img {
+        padding: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
 }

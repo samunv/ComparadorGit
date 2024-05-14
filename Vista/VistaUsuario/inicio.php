@@ -21,18 +21,23 @@
 
   <section class="seccion-presentacion" id="seccion-presentacion">
     <div class="botones-presentacion">
-      <h1>Compara con ayuda de Gráficas</h1>
-     <a href="comparar.php"> <button type="button" id="btn-graficas">Comparar</button></a>
+      <h1>Compara Sistemas Operativos</h1>
+      <a href="comparar.php"> <button type="button" id="btn-comparar">Comparar</button></a>
     </div>
     <div class="imagen-presentacion">
       <img src="../img/dibujo-grafico-de-linea.png" alt="" />
     </div>
   </section>
 
+  <section class="seccion-presentacion2" id="seccion-presentacion2">
+    <h1>Top de SO por <span id="span-comunidad">Comunidad</span></h1>
+    <div id="datos-top-so"></div>
+  </section>
+
 
 
   <section class="seccion-cuadrado" id="seccion-cuadrado">
-    <a href="inicio.php#seccion-principal">
+    <a href="inicio.php#seccion-cajas-info">
       <img src="../img/WINDOWS.png" alt="" id="foto-carrusel" />
     </a>
   </section>
@@ -40,7 +45,6 @@
 
 
   <section class="seccion-cuadrado2">
-    <h1 class="texto-deMoviles">Lo último de Móviles</h1>
     <section class="seccionAndroid" id="seccionAndroid">
       <div class="Android">
         <h1>Android 14</h1>
@@ -137,7 +141,7 @@
   <section class="seccion-cuadrado3" id="seccion-cuadrado3">
     <h1 class="texto-deConsolas">Lo último de Consolas</h1>
     <section class="seccionPS5" id="seccionPS5">
-      <img src="../img/interfaz_PS4.jpg" alt="" width="700px" height="500px" id="imagen-ps5" />
+      <img src="../img/interfaz_PS4.jpg" alt="" width="800px" height="550px" id="imagen-ps5" />
     </section>
 
     <section id="seccionPS5-oculta">
@@ -171,7 +175,7 @@
     </section>
 
     <section class="seccionXbox" id="seccionXbox">
-      <img src="../img/INTERFAZ_XBOX.webp" alt="" height="500px" width="720px" id="imagen-xbox" />
+      <img src="../img/INTERFAZ_XBOX.webp" alt="" height="550px" width="800px" id="imagen-xbox" />
     </section>
 
     <section id="seccionXbox-oculta">

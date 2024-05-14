@@ -8,8 +8,8 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
     public function __construct()
     {
         $servidor = "localhost";
-        $usuario = "samu";
-        $contrasena_bd = "12345";
+        $usuario = "samu2";
+        $contrasena_bd = "123ABC=e";
         $base_de_datos = "comparadorprueba";
 
         // Establecer conexión con la base de datos
@@ -41,7 +41,7 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
         echo json_encode($datosArray);
     }
 
-    
+
     public function subirSO(SistemaOperativo $so)
     {
         $sql = "INSERT INTO so (nombre, fabricante, arquitectura, comunidad, seguridad, version, dispositivos, imagen, gratis) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -84,7 +84,30 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
     {
     }
 
-    public function eliminar(SistemaOperativo $so)
+    public function eliminar($nombre)
     {
+        // Sentencia SQL con marcador de posición
+        $sql = "DELETE FROM so WHERE nombre=?";
+
+        // Preparar la declaración SQL
+        $stmt = $this->conexion->prepare($sql);
+
+        if ($stmt) {
+            // Asociar parámetro e idSO a la declaración
+            $stmt->bind_param("s", $nombre);
+
+            // Ejecutar la declaración
+            $resultado = $stmt->execute();
+
+            // Verificar si la ejecución tuvo éxito
+            if ($resultado) {
+                return "Sistema operativo eliminado exitosamente.";
+            } else {
+                return "Error al eliminar el sistema operativo";
+            }
+        } else {
+            // Si la preparación falla, devolver un mensaje de error
+            return "Error al preparar la consulta";
+        }
     }
 }

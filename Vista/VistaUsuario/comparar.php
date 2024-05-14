@@ -37,29 +37,29 @@
 
     <section id="seccion-porque-oscomparer">
 
-        <h1 class="texto-porque-oscomparer" id="primer-h1">¿Por qué OScomparer?</h1>
+        <h1 class="texto-porque-oscomparer" id="primer-h1">¿Por qué comparar en OScomparer?</h1>
         <div class="seccion-respuestas">
             <div class="cajas-respuestas">
                 <h2>Sistema de Puntos</h2>
-                <p>Utilizamos un Sistema de Puntos para comparar los SO. Dependerán de factores como:
+                <p>Nuestro Sistema de Puntos depende de:
                     <br>
-                    La seguridad: 15 puntos por punto de seguridad.
+                    Seguridad: 15 puntos por punto.
                     <br>
-                    La comunidad: 0.5 puntos por cada Millón.
+                    Comunidad: 0.5 puntos por Millón.
                     <br>
                     Estatus: 10 puntos si es gratis.
                 </p>
-                <img src="../img/cuenta.png" alt="" width="100" height="100">
+                <img src="../img/cuenta.png" alt="" width="70" height="70">
             </div>
             <div class="cajas-respuestas">
                 <h2>Gráficas</h2>
                 <p>Nuestro Sistema de Gráficas permite visualizar mejor, y a simple vista, las comparaciones los distintos SO. Las gráficas mostrarán los puntos de los SO de una forma mucho más visual.</p>
-                <img src="../img/grafico-histograma.png" alt="" width="100" height="100">
+                <img src="../img/grafico-histograma.png" alt="" width="70" height="70">
             </div>
             <div class="cajas-respuestas">
                 <h2>Tu Opinión Importa</h2>
                 <p>En OScomparer, puedes compartir comentarios opinando de los distintos SO. Los usuarios tendrán en cuenta tu opinión a la hora de comparar un SO con otro.</p>
-                <img src="../img/comentario-alt (1).png" alt="" width="100" height="100">
+                <img src="../img/comentario-alt (1).png" alt="" width="70" height="70">
             </div>
         </div>
     </section>

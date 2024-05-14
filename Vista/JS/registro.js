@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     let datos = new FormData(formularioRegistro);
 
-    fetch("/ComparadorGit/Controlador/registrocontrolador.php", {
+    fetch("./Controlador/registrocontrolador.php", {
       method: "POST",
       body: datos,
     })
@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         console.log(data);
         if (data.registro === "registrado") {
-          window.location.href = "/ComparadorGit/login.php";
+          window.location.href = "../ComparadorGit/login.php";
         }
       });
   });
