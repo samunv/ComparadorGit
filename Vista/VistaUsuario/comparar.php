@@ -64,14 +64,19 @@
     </section>
 
 
-
-    <section id="titulo-moviles" class="titulo">
-        <h1>Sistemas Operativos de Móviles</h1>
+    <section class="seccion-texto-boton">
+        <section class="texto">
+            <section id="titulo-moviles" class="titulo">
+                <h1>Sistemas Operativos de Móviles</h1>
+            </section>
+            <section class="texto-explicativo">
+                <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+            </section>
+        </section>
+        <div class="seccion-boton-comparar">
+            <button type="button" class="btn-comparar" id="btn-comparar-Móviles">Comparar</button>
+        </div>
     </section>
-    <section class="texto-explicativo">
-        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
-    </section>
-
     <section id="seccion-moviles" class="secciones"></section>
     <section class="seccion-botones">
         <div id="btn-derecha-moviles" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
@@ -83,14 +88,19 @@
     <div id="ventana-comparacion" class="ventana-comparacion">comparar</div>
 
 
-
-    <section id="titulo-ordenadores" class="titulo">
-        <h1>Sistemas Operativos de Ordenadores</h1>
+    <section class="seccion-texto-boton">
+        <section class="texto">
+            <section id="titulo-ordenadores" class="titulo">
+                <h1>Sistemas Operativos de Ordenadores</h1>
+            </section>
+            <section class="texto-explicativo">
+                <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+            </section>
+        </section>
+        <div class="seccion-boton-comparar">
+            <button type="button" class="btn-comparar" id="btn-comparar-Ordenadores">Comparar</button>
+        </div>
     </section>
-    <section class="texto-explicativo">
-        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
-    </section>
-
     <section id="seccion-ordenadores" class="secciones"></section>
 
     <section class="seccion-botones">

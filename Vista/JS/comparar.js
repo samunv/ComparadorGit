@@ -30,6 +30,80 @@ window.addEventListener("DOMContentLoaded", function () {
       console.error("Error al realizar la solicitud:", error);
     });
 
+  function elegirSO(datos, dispositivo) {
+    let seleccionados = []; // Array para guardar los dispositivos seleccionados
+    let btnComparar = document.getElementById("btn-comparar-" + dispositivo);
+    btnComparar.disabled = true;
+
+    for (let i = 0; i < datos.length; i++) {
+      if (datos[i].dispositivos === dispositivo) {
+        let contenedor = document.getElementById("contenedor" + i);
+
+        contenedor.addEventListener("click", function seleccionar() {
+          if (seleccionados.includes(datos[i])) {
+            // Si el so ya está seleccionado, lo deseleccionamos
+            contenedor.style.borderWidth = "";
+            contenedor.style.borderStyle = "";
+            contenedor.style.borderColor = "";
+            btnComparar.disabled = true;
+            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
+          } else if (seleccionados.length < 2) {
+            // Si aún no se han seleccionado dos so, seleccionamos este
+            contenedor.style.borderWidth = "2px"; // Grosor del borde
+            contenedor.style.borderStyle = "solid"; // Estilo del borde
+            contenedor.style.borderColor = "#0071e3"; // Color del borde
+            seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
+            btnComparar.disabled = true;
+          } else {
+            alert(
+              "Solo se pueden elegir dos dispositivos. Deselecciona uno de los dispositivos elegidos."
+            );
+          }
+
+          // Si no se han seleccionado dos so se vuelve al estilo del boton desactivado
+          if (btnComparar.disabled) {
+            btnComparar.style.color = "";
+            btnComparar.style.backgroundColor = "";
+            btnComparar.style.border = "";
+            btnComparar.style.borderRadius = "";
+            btnComparar.style.padding = "";
+            btnComparar.style.width = "";
+            btnComparar.style.transition = "";
+            btnComparar.style.cursor = "";
+            btnComparar.style.fontSize = "";
+          }
+
+          // Si se han seleccionado exactamente 2 so llamar a comparar
+
+          if (seleccionados.length === 2) {
+            btnComparar.disabled = false;
+            if (!btnComparar.disabled) {
+              btnComparar.style.color = "white";
+              btnComparar.style.backgroundColor = "#0071e3";
+              btnComparar.style.border = "1px solid #0071e3";
+              btnComparar.style.borderRadius = "30px";
+              btnComparar.style.padding = "10px 30px";
+              btnComparar.style.width = "200px";
+              btnComparar.style.transition = "all 0.5s ease";
+              btnComparar.style.cursor = "pointer";
+              btnComparar.style.fontSize = "18px";
+
+              // Establecer el color de fondo al hacer hover
+              btnComparar.addEventListener("mouseover", function () {
+                btnComparar.style.backgroundColor = "transparent";
+                btnComparar.style.color = "#0071e3";
+              });
+            }
+
+            btnComparar.addEventListener("click", function () {
+              comparar(seleccionados[0], seleccionados[1]);
+            });
+          }
+        });
+      }
+    }
+  }
+
   function imprimirMoviles(datos) {
     let html = "";
 
@@ -61,41 +135,6 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     seccionMoviles.innerHTML = html;
-  }
-
-  function elegirSO(datos, dispositivo) {
-    let seleccionados = []; // Array para guardar los dispositivos seleccionados
-
-    for (let i = 0; i < datos.length; i++) {
-      if (datos[i].dispositivos === dispositivo) {
-        let contenedor = document.getElementById("contenedor" + i);
-
-        contenedor.addEventListener("click", function seleccionar() {
-          if (seleccionados.includes(datos[i])) {
-            // Si el dispositivo ya está seleccionado, lo deseleccionamos
-            contenedor.style.borderWidth = "";
-            contenedor.style.borderStyle = "";
-            contenedor.style.borderColor = "";
-            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
-          } else if (seleccionados.length < 2) {
-            // Si aún no se han seleccionado dos dispositivos, seleccionamos este
-            contenedor.style.borderWidth = "2px"; // Grosor del borde
-            contenedor.style.borderStyle = "solid"; // Estilo del borde
-            contenedor.style.borderColor = "#0071e3"; // Color del borde
-            seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
-          } else {
-            alert(
-              "Solo se pueden elegir dos dispositivos. Deselecciona uno de los dispositivos elegidos."
-            );
-          }
-
-          // Si se han seleccionado exactamente 2 dispositivos llamar a comparar
-          if (seleccionados.length === 2) {
-            comparar(seleccionados[0], seleccionados[1]);
-          }
-        });
-      }
-    }
   }
 
   function imprimirOrdenadores(datos) {
