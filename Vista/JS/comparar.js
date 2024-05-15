@@ -60,39 +60,17 @@ window.addEventListener("DOMContentLoaded", function () {
             );
           }
 
-          // Si no se han seleccionado dos so se vuelve al estilo del boton desactivado
           if (btnComparar.disabled) {
-            btnComparar.style.color = "";
-            btnComparar.style.backgroundColor = "";
-            btnComparar.style.border = "";
-            btnComparar.style.borderRadius = "";
-            btnComparar.style.padding = "";
-            btnComparar.style.width = "";
-            btnComparar.style.transition = "";
-            btnComparar.style.cursor = "";
-            btnComparar.style.fontSize = "";
+            desactivarBoton(btnComparar);
           }
+          // Si no se han seleccionado dos so se vuelve al estilo del boton desactivado
 
           // Si se han seleccionado exactamente 2 so llamar a comparar
 
           if (seleccionados.length === 2) {
             btnComparar.disabled = false;
             if (!btnComparar.disabled) {
-              btnComparar.style.color = "white";
-              btnComparar.style.backgroundColor = "#0071e3";
-              btnComparar.style.border = "1px solid #0071e3";
-              btnComparar.style.borderRadius = "30px";
-              btnComparar.style.padding = "10px 30px";
-              btnComparar.style.width = "200px";
-              btnComparar.style.transition = "all 0.5s ease";
-              btnComparar.style.cursor = "pointer";
-              btnComparar.style.fontSize = "18px";
-
-              // Establecer el color de fondo al hacer hover
-              btnComparar.addEventListener("mouseover", function () {
-                btnComparar.style.backgroundColor = "transparent";
-                btnComparar.style.color = "#0071e3";
-              });
+              activarBoton(btnComparar);
             }
 
             btnComparar.addEventListener("click", function () {
@@ -102,6 +80,45 @@ window.addEventListener("DOMContentLoaded", function () {
         });
       }
     }
+  }
+
+  function desactivarBoton(btnComparar) {
+    btnComparar.style.color = "";
+    btnComparar.style.backgroundColor = "";
+    btnComparar.style.border = "";
+    btnComparar.style.borderRadius = "";
+    btnComparar.style.padding = "";
+    btnComparar.style.width = "";
+    btnComparar.style.transition = "";
+    btnComparar.style.cursor = "";
+    btnComparar.style.fontSize = "";
+
+    btnComparar.addEventListener("mouseover", function () {
+      btnComparar.style.backgroundColor = "";
+      btnComparar.style.color = "";
+    });
+  }
+
+  function activarBoton(btnComparar) {
+    btnComparar.style.color = "white";
+    btnComparar.style.backgroundColor = "#0071e3";
+    btnComparar.style.border = "1px solid #0071e3";
+    btnComparar.style.borderRadius = "30px";
+    btnComparar.style.padding = "10px 30px";
+    btnComparar.style.width = "200px";
+    btnComparar.style.transition = "all 0.5s ease";
+    btnComparar.style.cursor = "pointer";
+    btnComparar.style.fontSize = "18px";
+
+    // Establecer el color de fondo al hacer hover
+    btnComparar.addEventListener("mouseover", function () {
+      btnComparar.style.backgroundColor = "transparent";
+      btnComparar.style.color = "#0071e3";
+    });
+    btnComparar.addEventListener("mouseout", function () {
+      btnComparar.style.backgroundColor = "#0071e3";
+      btnComparar.style.color = "white";
+    });
   }
 
   function imprimirMoviles(datos) {

@@ -74,7 +74,7 @@
             </section>
         </section>
         <div class="seccion-boton-comparar">
-            <button type="button" class="btn-comparar" id="btn-comparar-Móviles">Comparar</button>
+            <button type="button" class="btn-comparar" id="btn-comparar-Móviles">Comparar 🡪</button>
         </div>
     </section>
     <section id="seccion-moviles" class="secciones"></section>
@@ -98,7 +98,7 @@
             </section>
         </section>
         <div class="seccion-boton-comparar">
-            <button type="button" class="btn-comparar" id="btn-comparar-Ordenadores">Comparar</button>
+            <button type="button" class="btn-comparar" id="btn-comparar-Ordenadores">Comparar 🡪</button>
         </div>
     </section>
     <section id="seccion-ordenadores" class="secciones"></section>
