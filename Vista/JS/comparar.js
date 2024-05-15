@@ -8,7 +8,6 @@ window.addEventListener("DOMContentLoaded", function () {
   let seccionTv = document.getElementById("seccion-tv");
   let seccionCoches = document.getElementById("seccion-coches");
 
-
   let res; // Variable para almacenar la respuesta
 
   fetch("./../../Controlador/compararcontrolador.php")
@@ -21,11 +20,11 @@ window.addEventListener("DOMContentLoaded", function () {
       imprimirConsolas(res);
       imprimirTv(res);
       imprimirCoches(res);
-      elegirMoviles(res);
-      elegirPc(res);
-      elegirConsolas(res);
-      elegirTv(res);
-      elegirCoches(res);
+      elegirSO(res, "Móviles");
+      elegirSO(res, "Ordenadores");
+      elegirSO(res, "Consola");
+      elegirSO(res, "TV");
+      elegirSO(res, "Coches");
     })
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
@@ -64,29 +63,29 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionMoviles.innerHTML = html;
   }
 
-  function elegirMoviles(datos) {
+  function elegirSO(datos, dispositivo) {
     let seleccionados = []; // Array para guardar los dispositivos seleccionados
 
     for (let i = 0; i < datos.length; i++) {
-      if (datos[i].dispositivos === "Móviles") {
+      if (datos[i].dispositivos === dispositivo) {
         let contenedor = document.getElementById("contenedor" + i);
 
         contenedor.addEventListener("click", function seleccionar() {
           if (seleccionados.includes(datos[i])) {
-            // Si el dispositivo ya está seleccionado, lo deseleccionamos quitando css
+            // Si el dispositivo ya está seleccionado, lo deseleccionamos
             contenedor.style.borderWidth = "";
             contenedor.style.borderStyle = "";
             contenedor.style.borderColor = "";
             seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
           } else if (seleccionados.length < 2) {
-            // Si aún no se han seleccionado dos dispositivos, se seleccionan añadiendo css
-            contenedor.style.borderWidth = "2px"; 
-            contenedor.style.borderStyle = "solid"; 
-            contenedor.style.borderColor = "#0071e3";
+            // Si aún no se han seleccionado dos dispositivos, seleccionamos este
+            contenedor.style.borderWidth = "2px"; // Grosor del borde
+            contenedor.style.borderStyle = "solid"; // Estilo del borde
+            contenedor.style.borderColor = "#0071e3"; // Color del borde
             seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
           } else {
             alert(
-              "Solo se pueden elegir dos SO. Deselecciona uno de los SO elegidos."
+              "Solo se pueden elegir dos dispositivos. Deselecciona uno de los dispositivos elegidos."
             );
           }
 
@@ -132,41 +131,6 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionOrdenadores.innerHTML = html;
   }
 
-  function elegirPc(datos) {
-    let seleccionados = []; // Array para guardar los dispositivos seleccionados
-
-    for (let i = 0; i < datos.length; i++) {
-      if (datos[i].dispositivos === "Ordenadores") {
-        let contenedor = document.getElementById("contenedor" + i);
-
-        contenedor.addEventListener("click", function seleccionar() {
-          if (seleccionados.includes(datos[i])) {
-            // Si el dispositivo ya está seleccionado, lo deseleccionamos
-            contenedor.style.borderWidth = "";
-            contenedor.style.borderStyle = "";
-            contenedor.style.borderColor = "";
-            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
-          } else if (seleccionados.length < 2) {
-            // Si aún no se han seleccionado dos dispositivos, seleccionamos este
-            contenedor.style.borderWidth = "2px"; // Grosor del borde
-            contenedor.style.borderStyle = "solid"; // Estilo del borde
-            contenedor.style.borderColor = "#0071e3"; // Color del borde
-            seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
-          } else {
-            alert(
-              "Solo se pueden elegir dos SO. Deselecciona uno de los SO elegidos."
-            );
-          }
-
-          // Si se han seleccionado exactamente 2 dispositivos llamar a comparar
-          if (seleccionados.length === 2) {
-            comparar(seleccionados[0], seleccionados[1]);
-          }
-        });
-      }
-    }
-  }
-
   function imprimirConsolas(datos) {
     let html = "";
 
@@ -198,41 +162,6 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     seccionConsolas.innerHTML = html;
-  }
-
-  function elegirConsolas(datos) {
-    let seleccionados = []; // Array para guardar los dispositivos seleccionados
-
-    for (let i = 0; i < datos.length; i++) {
-      if (datos[i].dispositivos === "Consola") {
-        let contenedor = document.getElementById("contenedor" + i);
-
-        contenedor.addEventListener("click", function seleccionar() {
-          if (seleccionados.includes(datos[i])) {
-            // Si el dispositivo ya está seleccionado, lo deseleccionamos
-            contenedor.style.borderWidth = "";
-            contenedor.style.borderStyle = "";
-            contenedor.style.borderColor = "";
-            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
-          } else if (seleccionados.length < 2) {
-            // Si aún no se han seleccionado dos dispositivos, seleccionamos este
-            contenedor.style.borderWidth = "2px"; // Grosor del borde
-            contenedor.style.borderStyle = "solid"; // Estilo del borde
-            contenedor.style.borderColor = "#0071e3"; // Color del borde
-            seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
-          } else {
-            alert(
-              "Solo se pueden elegir dos SO. Deselecciona uno de los SO elegidos."
-            );
-          }
-
-          // Si se han seleccionado exactamente 2 dispositivos llamar a comparar
-          if (seleccionados.length === 2) {
-            comparar(seleccionados[0], seleccionados[1]);
-          }
-        });
-      }
-    }
   }
 
   function imprimirTv(datos) {
@@ -268,41 +197,6 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionTv.innerHTML = html;
   }
 
-  function elegirTv(datos) {
-    let seleccionados = []; // Array para guardar los dispositivos seleccionados
-
-    for (let i = 0; i < datos.length; i++) {
-      if (datos[i].dispositivos === "TV") {
-        let contenedor = document.getElementById("contenedor" + i);
-
-        contenedor.addEventListener("click", function seleccionar() {
-          if (seleccionados.includes(datos[i])) {
-            // Si el dispositivo ya está seleccionado, lo deseleccionamos
-            contenedor.style.borderWidth = "";
-            contenedor.style.borderStyle = "";
-            contenedor.style.borderColor = "";
-            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
-          } else if (seleccionados.length < 2) {
-            // Si aún no se han seleccionado dos dispositivos, seleccionamos este
-            contenedor.style.borderWidth = "2px"; // Grosor del borde
-            contenedor.style.borderStyle = "solid"; // Estilo del borde
-            contenedor.style.borderColor = "#0071e3"; // Color del borde
-            seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
-          } else {
-            alert(
-              "Solo se pueden elegir dos SO. Deselecciona uno de los SO elegidos."
-            );
-          }
-
-          // Si se han seleccionado exactamente 2 dispositivos llamar a comparar
-          if (seleccionados.length === 2) {
-            comparar(seleccionados[0], seleccionados[1]);
-          }
-        });
-      }
-    }
-  }
-
   function imprimirCoches(datos) {
     let html = "";
 
@@ -336,41 +230,6 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionCoches.innerHTML = html;
   }
 
-  function elegirCoches(datos) {
-    let seleccionados = []; // Array para guardar los dispositivos seleccionados
-
-    for (let i = 0; i < datos.length; i++) {
-      if (datos[i].dispositivos === "Coches") {
-        let contenedor = document.getElementById("contenedor" + i);
-
-        contenedor.addEventListener("click", function seleccionar() {
-          if (seleccionados.includes(datos[i])) {
-            // Si el dispositivo ya está seleccionado, lo deseleccionamos
-            contenedor.style.borderWidth = "";
-            contenedor.style.borderStyle = "";
-            contenedor.style.borderColor = "";
-            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
-          } else if (seleccionados.length < 2) {
-            // Si aún no se han seleccionado dos dispositivos, seleccionamos este
-            contenedor.style.borderWidth = "2px"; // Grosor del borde
-            contenedor.style.borderStyle = "solid"; // Estilo del borde
-            contenedor.style.borderColor = "#0071e3"; // Color del borde
-            seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
-          } else {
-            alert(
-              "Solo se pueden elegir dos SO. Deselecciona uno de los SO elegidos."
-            );
-          }
-
-          // Si se han seleccionado exactamente 2 dispositivos llamar a comparar
-          if (seleccionados.length === 2) {
-            comparar(seleccionados[0], seleccionados[1]);
-          }
-        });
-      }
-    }
-  }
-
   let ventanaComparacion = document.getElementById("ventana-comparacion");
   function comparar(so1, so2) {
     //10 Puntos por punto de seguridad:
@@ -401,17 +260,12 @@ window.addEventListener("DOMContentLoaded", function () {
       total2 += 0;
     }
 
-    //console.log(so1.nombre + ": " + total1 + " puntos.");
-    //console.log(so2.nombre + ": " + total2 + " puntos.");
-
     let ganador = "";
 
     if (total1 > total2) {
       ganador = so1.nombre;
-      //console.log("Ganador: " + ganador + " con " + total1 + " puntos.");
     } else if (total1 < total2) {
       ganador = so2.nombre;
-      //console.log("Ganador: " + ganador + " con " + total2 + " puntos.");
     } else if (total1 == total2) {
       //console.log("empate");
     }

@@ -1,11 +1,20 @@
 <?php
 class Usuarios
 {
-    private $idUsuario; //integer
-    private $nombreUsuario; //string
-    private $email; //string
-    private $contrasena; //String
 
+    /**
+     * @var int $idUsuario almacenar el id del usuario
+     * @var string $nombreUusuario almacenar el nombre del usuario
+     * @var string $email almacenar el email del usuario
+     * @var string $contrasena almacenar la contraseña del usuario
+     * @var boolean $permisosAdmin almacena los permisos de administrador, si es 1 o 0
+     */
+
+    private $idUsuario;
+    private $nombreUsuario;
+    private $email;
+    private $contrasena;
+    private $permisosAdmin;
 
     public function __construct($nombreUsuario, $email, $contrasena)
     {
@@ -13,6 +22,8 @@ class Usuarios
         $this->email = $email;
         $this->contrasena = $contrasena;
     }
+
+
 
     public function getidUsuario()
     {
@@ -63,6 +74,20 @@ class Usuarios
     public function setContrasena($contrasena)
     {
         $this->contrasena = $contrasena;
+
+        return $this;
+    }
+
+
+    public function getPermisosAdmin()
+    {
+        return $this->permisosAdmin;
+    }
+
+
+    public function setPermisosAdmin($permisosAdmin)
+    {
+        $this->permisosAdmin = $permisosAdmin;
 
         return $this;
     }

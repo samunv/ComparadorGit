@@ -1,29 +1,33 @@
 <?php
 require_once "SistemaOperativoDAO.php";
+require_once "Conexion.php";
 class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
+
 {
+
+    /**
+     * @var Conexion $conexion almacenar la conexion con la base de datos
+     */
 
     private $conexion;
 
     public function __construct()
     {
-        $servidor = "localhost";
-        $usuario = "samu2";
-        $contrasena_bd = "123ABC=e";
-        $base_de_datos = "comparadorprueba";
-
-        // Establecer conexión con la base de datos
-        $this->conexion = new mysqli($servidor, $usuario, $contrasena_bd, $base_de_datos);
-
-        // Verificar la conexión
-        if ($this->conexion->connect_error) {
-            die("Error de conexión con la base de datos.");
-        }
+        return $this->conexion = new Conexion();
     }
+
+    /**
+     * Función para leer información de los SO desde la base de datos.
+     *
+     * Esta función realiza una consulta a la base de datos para obtener los datos
+     * de los SO
+     * 
+     * @return json Devuelve un json con los datos de los SO encontrados en la base de datos
+     */
 
     public function leerSO()
     {
-        $consulta = mysqli_query($this->conexion, "SELECT * FROM so") or die("Error en consulta: " . mysqli_error($this->conexion));
+        $consulta = mysqli_query($this->conexion->getConexion(), "SELECT * FROM so") or die("Error en consulta: " . mysqli_error($this->conexion->getConexion()));
         $datosArray = array();
         while ($reg = mysqli_fetch_array($consulta)) {
             $datosArray[] = $reg;
@@ -31,26 +35,27 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
         return json_encode($datosArray);
     }
 
-    public function leerSOporNombre($nombre)
-    {
-        $consulta = mysqli_query($this->conexion, "SELECT * FROM so WHERE nombre = '$nombre'") or die("Error en consulta: " . mysqli_error($this->conexion));
-        $datosArray = array();
-        while ($reg = mysqli_fetch_array($consulta)) {
-            $datosArray[] = $reg;
-        }
-        echo json_encode($datosArray);
-    }
-
+    /**
+     * Función para subir/crear un SO en la base de datos.
+     *
+     * Esta función realiza una consulta a la base de datos para crear un nuevo SO con los datos del objetos
+     * SistemaOperativo proporcionados
+     * 
+     * @param SistemaOperativo $so objeto SistemaOperativo que almacena los datos de los SO
+     * 
+     * @return string|string|string Devuelve un mensaje de éxito si el SO se crea, si no, devuelve un mensaje de error.
+     *                              Si la consulta no se realiza, devuelve un mensaje de error.
+     */
 
     public function subirSO(SistemaOperativo $so)
     {
         $sql = "INSERT INTO so (nombre, fabricante, arquitectura, comunidad, seguridad, version, dispositivos, imagen, gratis) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         // Preparar la declaración SQL
-        $stmt = $this->conexion->prepare($sql);
+        $consulta = $this->conexion->getConexion()->prepare($sql);
 
 
-        if ($stmt) {
+        if ($consulta) {
 
             $nombre = $so->getNombre();
             $fabricante = $so->getFabricante();
@@ -63,10 +68,10 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
             $gratis = $so->getGratis();
 
             // Vincular los parámetros con los valores proporcionados
-            $stmt->bind_param("sssiidsss", $nombre, $fabricante, $arquitectura, $comunidad, $seguridad, $version, $dispositivos, $imagen, $gratis);
+            $consulta->bind_param("sssiidsss", $nombre, $fabricante, $arquitectura, $comunidad, $seguridad, $version, $dispositivos, $imagen, $gratis);
 
             // Ejecutar la declaración
-            $resultado = $stmt->execute();
+            $resultado = $consulta->execute();
 
             // Verificar si la ejecución tuvo éxito
             if ($resultado) {
@@ -84,20 +89,33 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
     {
     }
 
+
+    /**
+     * Función para eliminar SO
+     *
+     * Esta función realiza una consulta a la base de datos para eliminar un SO mediante la sentencia sql 
+     * utilizando el nombre del SO
+     * 
+     * @param string $nombre nombre del SO seleccionado para eliminar
+     * 
+     * @return string|string|string Devuelve un mensaje de éxito si el SO se elimina, si no, devuelve un mensaje de error.
+     *                              Si la consulta no se realiza, devuelve un mensaje de error.
+     */
+
     public function eliminar($nombre)
     {
         // Sentencia SQL con marcador de posición
         $sql = "DELETE FROM so WHERE nombre=?";
 
         // Preparar la declaración SQL
-        $stmt = $this->conexion->prepare($sql);
+        $consulta = $this->conexion->getConexion()->prepare($sql);
 
-        if ($stmt) {
+        if ($consulta) {
             // Asociar parámetro e idSO a la declaración
-            $stmt->bind_param("s", $nombre);
+            $consulta->bind_param("s", $nombre);
 
             // Ejecutar la declaración
-            $resultado = $stmt->execute();
+            $resultado = $consulta->execute();
 
             // Verificar si la ejecución tuvo éxito
             if ($resultado) {

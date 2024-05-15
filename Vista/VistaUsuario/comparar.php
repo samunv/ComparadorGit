@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OScomparer | Comparar</title>
     <link rel="stylesheet" href="../CSS/comparar.css?v=<?php echo time(); ?>" />
-    <link rel="stylesheet" href="../CSS/estiloheader.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../CSS/estilofooter.css?v=<?php echo time() ?>">
     <link rel="icon" href="../img/flechas-repetir (1).png" />
     <script src="../JS/comparar.js?v=<?php echo time(); ?>"></script>

@@ -9,6 +9,126 @@ body {
     overflow-x: hidden;
 }
 
+
+header {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: static;
+    z-index: 999;
+
+
+}
+
+
+.nav-principal ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 13px;
+}
+
+.nav-principal ul li a:hover {
+    color: #0071e3;
+
+
+}
+
+.nav-principal ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 13px;
+    border-radius: 20px;
+}
+
+.nav-movil {
+    display: none;
+}
+
+.caja-buscador-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.sesionusuario {
+    margin-top: 3px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+
+.sesionusuario:hover {
+    cursor: pointer;
+}
+
+
+.menu {
+    display: none;
+}
+
+
+#pestana-cerrar-sesion {
+    background-color: white;
+    width: 150px;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 1px rgb(162, 162, 162) solid;
+    position: absolute;
+    left: 82%;
+    top: 66px;
+    display: none;
+    flex-direction: column;
+
+    z-index: 999;
+
+}
+
+#pestana-cerrar-sesion p {
+    padding: 5px;
+}
+
+#pestana-cerrar-sesion a {
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+}
+
+#pestana-cerrar-sesion p:hover {
+    color: #0071e3;
+    cursor: pointer;
+}
+
+#pestana-cerrar-sesion a:hover {
+    color: #0071e3;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
 #carrusel-dispositivos {
     height: 600px;
     width: 100%;
@@ -23,7 +143,6 @@ body {
     padding: 10px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 64px;
     margin-bottom: 50px;
 
 }
@@ -334,6 +453,104 @@ h3 {
         width: 430px;
     }
 
+    #header {
+        width: 100%;
+        display: flex;
+        position: static;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .menu {
+        display: block;
+        margin-right: 3px;
+        margin-top: 3px;
+    }
+
+    .caja-buscador-login {
+        width: 240px;
+    }
+
+    .contenedor-buscador {
+        width: 110px;
+    }
+
+    .contenedor-buscador img {
+        margin-top: 3px;
+        margin-right: 7px;
+    }
+
+    .buscador {
+        padding: 0%;
+    }
+
+    .nav-principal ul li {
+        display: none;
+    }
+
+    .nav-movil {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        background-color: white;
+        position: absolute;
+        width: 100%;
+    }
+
+    .nav-movil ul li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        font-size: 17px;
+        transition: all 0.3s ease;
+        border-radius: 20px;
+        padding: 13px;
+    }
+
+    .nav-movil ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 13px;
+        border-radius: 20px;
+    }
+
+    .sesionusuario {
+        margin-top: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        border-radius: 20px;
+        width: 80px;
+        padding: 5px;
+    }
+
+    #nombre-usuario {
+        padding: 5px;
+    }
+
+
+    .sesionusuario:hover {
+        cursor: pointer;
+    }
+
+    #pestana-cerrar-sesion {
+
+        width: 120px;
+        padding: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: absolute;
+        left: 60%;
+        top: 66px;
+        z-index: 999;
+
+    }
+
     #botones-scroll {
         display: none;
     }
@@ -362,6 +579,8 @@ h3 {
         width: 300px;
         height: auto;
         font-size: smaller;
+        position: fixed;
+        left: 41%;
     }
 
     .caja-general {
@@ -374,6 +593,11 @@ h3 {
 
     .contenedores{
         width: 230px;
+    }
+
+    .contenedores .imagenes{
+        width: 50px;
+        height: 50px;
     }
 
     .contenedor-canvas {

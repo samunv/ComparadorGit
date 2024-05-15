@@ -7,24 +7,35 @@ require_once '../Modelo/sistemaOperativoDAOImplementar.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES['imagen'])) {
 
-        $imagen = $_FILES['imagen'];
-
         // Mover el archivo
-        $directorio = "../img/"; 
+        $directorio = "../img/";
+
+        $datosImagen = $_FILES['imagen'];
+        $nombre = $_POST['nombre'];
+        $fabricante = $_POST['fabricante'];
+        $arquitectura = $_POST['arquitectura'];
+        $comunidad = $_POST['comunidad'];
+        $seguridad = $_POST['seguridad'];
+        $version = $_POST['version'];
+        $dispositivos = $_POST['dispositivos'];
+        $imagen = $directorio . $datosImagen['name']; // Ruta de la imagen
+        $gratis = $_POST["gratis"];
+
+
 
         // La imagen se ha guardado correctamente
 
         // Crear un nuevo objeto so con los datos del formulario
         $so = new SistemaOperativo(
-            $_POST['nombre'],
-            $_POST['fabricante'],
-            $_POST['arquitectura'],
-            $_POST['comunidad'],
-            $_POST['seguridad'],
-            $_POST['version'],
-            $_POST['dispositivos'],
-            $directorio . $imagen['name'], // Ruta de la imagen
-            $_POST["gratis"]
+            $nombre,
+            $fabricante,
+            $arquitectura,
+            $comunidad,
+            $seguridad,
+            $version,
+            $dispositivos,
+            $imagen,
+            $gratis
         );
 
         // Crear una instancia del DAO
