@@ -5,9 +5,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let seccionPrincipal = document.getElementById("seccion-principal");
 
-  let res; // Variable para almacenar la respuesta de la API
+  let res;
 
-  // Realiza una solicitud a la API utilizando fetch
+  // Realiza una solicitud
   fetch("./../../Controlador/paginainfocontrolador.php")
     .then((respuesta) => respuesta.json())
     .then((data) => {

@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function cerrar() {
     // verificar si el nombre de usuario existe en sessionStorage
-    if (sessionStorage.getItem("nombreUsuario")) {
+    if (nombreUsuario) {
       // eliminar el nombre de usuario
       sessionStorage.removeItem("nombreUsuario");
       // eliminar los permisos de admin
