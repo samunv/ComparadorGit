@@ -1,9 +1,14 @@
 window.addEventListener("DOMContentLoaded", function () {
+  //Marcar el texto del nav cuando se esté en la página de comparar
   let liComparar = document.getElementById("li-comparar");
   liComparar.style.fontWeight = "bold";
-  let btnSubir = document.getElementById("btn-subir");
-  btnSubir.style.display = "none"; 
 
+  //Obtener el botón subir
+  let btnSubir = document.getElementById("btn-subir");
+  //Ocultar el botón de subir
+  btnSubir.style.display = "none";
+
+  //Asignación de variables de las secciones en las que se van a imprimir datos
   let seccionMoviles = document.getElementById("seccion-moviles");
   let seccionOrdenadores = document.getElementById("seccion-ordenadores");
   let seccionConsolas = document.getElementById("seccion-consolas");
@@ -17,11 +22,13 @@ window.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       res = data; // Almacena la respuesta en la variable res
       console.log(res);
+      //Lamar a los métodos que van a utilizar los datos del json para poder pasar res como parámetro
       imprimirMoviles(res);
       imprimirOrdenadores(res);
       imprimirConsolas(res);
       imprimirTv(res);
       imprimirCoches(res);
+      //Pasar como parámetro el nombre del dispositivo para la lógica de selección
       elegirSO(res, "Móviles");
       elegirSO(res, "Ordenadores");
       elegirSO(res, "Consola");
@@ -32,29 +39,36 @@ window.addEventListener("DOMContentLoaded", function () {
       console.error("Error al realizar la solicitud:", error);
     });
 
+  //Función para elegir los so y poder compararlos
+  //Tomar los datos (res) y dispositivo como parámetros
   function elegirSO(datos, dispositivo) {
     let seleccionados = []; // Array para guardar los dispositivos seleccionados
+
+    //Obtener el boton de comparar para poder habilitar o deshabilitarlo según la lógica de selección
     let btnComparar = document.getElementById("btn-comparar-" + dispositivo);
+    //Deshabilitar el botón
     btnComparar.disabled = true;
 
     for (let i = 0; i < datos.length; i++) {
+      //obtener los datos recorridos según su dispositivo
       if (datos[i].dispositivos === dispositivo) {
         let contenedor = document.getElementById("contenedor" + i);
 
         contenedor.addEventListener("click", function seleccionar() {
+          //Al hacer click en un contenedor, verificar si ya está seleccionado o no
           if (seleccionados.includes(datos[i])) {
             // Si el so ya está seleccionado, lo deseleccionamos
             contenedor.style.borderWidth = "";
             contenedor.style.borderStyle = "";
             contenedor.style.borderColor = "";
             btnComparar.disabled = true;
-            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminamos el dispositivo del array de seleccionados
+            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminar el dispositivo del array de seleccionados con el método filter()
           } else if (seleccionados.length < 2) {
             // Si aún no se han seleccionado dos so, seleccionamos este
             contenedor.style.borderWidth = "2px"; // Grosor del borde
             contenedor.style.borderStyle = "solid"; // Estilo del borde
             contenedor.style.borderColor = "#0071e3"; // Color del borde
-            seleccionados.push(datos[i]); // Añadimos los datos al array de seleccionados
+            seleccionados.push(datos[i]); // Añadimos los datos del so al array de seleccionados
             btnComparar.disabled = true;
           } else {
             alert(
@@ -62,24 +76,28 @@ window.addEventListener("DOMContentLoaded", function () {
             );
           }
 
+          //Si el botón de comparar está deshabilitado, llamar a la función desactivarBoton() para aplicar los estilos necesarios
           if (btnComparar.disabled) {
             desactivarBoton(btnComparar);
           } else if (!btnComparar.disabled) {
+            // Si el botón no esta deshabilitado, llamar a al función activarBoton() para aplicar los estilos del botón activado
             activarBoton(btnComparar);
           }
-          // Si no se han seleccionado dos so se vuelve al estilo del boton desactivado
-
-          // Si se han seleccionado exactamente 2 so llamar a comparar
 
           if (seleccionados.length === 2) {
+            // Si se han seleccionado 2 so, llamar a comparar y habilitar el botón de comparar
             btnComparar.disabled = false;
+
+            // Aplicar la lógica del botón de nuevo
             if (btnComparar.disabled) {
               desactivarBoton(btnComparar);
             } else if (!btnComparar.disabled) {
               activarBoton(btnComparar);
             }
 
+            //Cuando se haga click en el botón de comparar, llamar a la función comparar()
             btnComparar.addEventListener("click", function () {
+              // pasar seleccionados[0] y seleccionados[1] como parámetros a comparar(), ya que son los so a comparar
               comparar(seleccionados[0], seleccionados[1]);
             });
           }
@@ -88,6 +106,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  //Función para aplicar los estilos al botón desactivado
   function desactivarBoton(btnComparar) {
     btnComparar.style.color = "";
     btnComparar.style.backgroundColor = "";
@@ -99,16 +118,19 @@ window.addEventListener("DOMContentLoaded", function () {
     btnComparar.style.cursor = "";
     btnComparar.style.fontSize = "";
 
+    //Al pasar el ratón por encima, no se aplicará otro estilo al anterior
     btnComparar.addEventListener("mouseover", function () {
       btnComparar.style.backgroundColor = "";
       btnComparar.style.color = "";
     });
+    //Al quitar el ratón de encima, seguirán los estilos anteriores
     btnComparar.addEventListener("mouseout", function () {
       btnComparar.style.backgroundColor = "";
       btnComparar.style.color = "";
     });
   }
 
+  //Función para aplicar los estilos al botón activado
   function activarBoton(btnComparar) {
     btnComparar.style.color = "white";
     btnComparar.style.backgroundColor = "#0071e3";
@@ -120,17 +142,20 @@ window.addEventListener("DOMContentLoaded", function () {
     btnComparar.style.cursor = "pointer";
     btnComparar.style.fontSize = "18px";
 
-    // Establecer el color de fondo al hacer hover
+    // Al pasar el ratón por encima, aplicar estilos
     btnComparar.addEventListener("mouseover", function () {
       btnComparar.style.backgroundColor = "transparent";
       btnComparar.style.color = "#0071e3";
     });
+
+    //Al quitar el ratón de encima, aplicar otros estilos
     btnComparar.addEventListener("mouseout", function () {
       btnComparar.style.backgroundColor = "#0071e3";
       btnComparar.style.color = "white";
     });
   }
 
+  // Función para imprimir los so de móviles
   function imprimirMoviles(datos) {
     let html = "";
 
@@ -164,6 +189,7 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionMoviles.innerHTML = html;
   }
 
+  // Función para imprimir los so de ordenadores
   function imprimirOrdenadores(datos) {
     let html = "";
 
@@ -197,6 +223,7 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionOrdenadores.innerHTML = html;
   }
 
+  // Función para imprimir los so de consolas
   function imprimirConsolas(datos) {
     let html = "";
 
@@ -230,6 +257,7 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionConsolas.innerHTML = html;
   }
 
+  // Función para imprimir los so de TV
   function imprimirTv(datos) {
     let html = "";
 
@@ -263,6 +291,7 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionTv.innerHTML = html;
   }
 
+  // Función para imprimir los so de coches
   function imprimirCoches(datos) {
     let html = "";
 
@@ -297,6 +326,8 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   let ventanaComparacion = document.getElementById("ventana-comparacion");
+
+  // Función para realizar la lógica de comparación
   function comparar(so1, so2) {
     //10 Puntos por punto de seguridad:
     let seguridad1 = so1.seguridad * 15;
@@ -306,35 +337,47 @@ window.addEventListener("DOMContentLoaded", function () {
     let comunidad1 = so1.comunidad * 0.5;
     let comunidad2 = so2.comunidad * 0.5;
 
+    //Crear un total para cada so y sumar sus puntos
     let total1 = seguridad1 + comunidad1;
     let total2 = seguridad2 + comunidad2;
 
     //10 puntos si el so es gratis
     let gratis1 = 0;
     let gratis2 = 0;
+
     if (so1.gratis === "Si") {
+      //Si el so es gratis, añadir puntos al total
       gratis1 = 10;
       total1 += gratis1;
     } else {
+      //Si no lo es, añadir 0 puntos al total
       total1 += 0;
     }
 
     if (so2.gratis === "Si") {
+      //Si el so es gratis, añadir puntos al total
       gratis2 = 10;
       total2 += gratis2;
     } else {
+      //Si no lo es, añadir 0 puntos al total
       total2 += 0;
     }
 
-    let ganador = "";
+
+    let ganador = ""; //Crear una variable para guardar los datos del so ganador
 
     if (total1 > total2) {
+      //Si el total1 es mayor al total2, se asignará la variable ganador al so1
       ganador = so1.nombre;
     } else if (total1 < total2) {
+      //Si el total2 es mayor al total1, se asignará la variable ganador al so2
       ganador = so2.nombre;
     } else if (total1 == total2) {
+      
       //console.log("empate");
     }
+
+    //Llamar a la función imprimirComparacion() con todos los parámetros necesarios
 
     imprimirComparacion(
       so1,
@@ -350,6 +393,7 @@ window.addEventListener("DOMContentLoaded", function () {
       ganador
     );
 
+    //Llamar a la función crearGráficas() con los parámetros necesarios
     crearGraficas(so1, so2, total1, total2);
   }
 
@@ -422,7 +466,7 @@ window.addEventListener("DOMContentLoaded", function () {
     html += "<ul>";
     html += "<li>Puntos de Seguridad: " + seguridad1 + "</li>";
     html += "<li>Puntos de Comunidad: " + comunidad1 + "</li>";
-    html += "<li>Puntos por Estatus: " + gratis1 + "</li>";
+    html += "<li>Puntos por ser Gratis (si lo es): " + gratis1 + "</li>";
     html += "</ul>";
     html += "<h3>Total de puntos: " + total1 + "</h3>";
     html += "</div>";
@@ -437,7 +481,7 @@ window.addEventListener("DOMContentLoaded", function () {
     html += "<ul>";
     html += "<li>Puntos de Seguridad: " + seguridad2 + "</li>";
     html += "<li>Puntos de Comunidad: " + comunidad2 + "</li>";
-    html += "<li>Puntos por Estatus: " + gratis2 + "</li>";
+    html += "<li>Puntos por ser Gratis (si lo es): " + gratis2 + "</li>";
     html += "</ul>";
     html += "<h3>Total de puntos: " + total2 + "</h3>";
     html += "</div>";
@@ -464,7 +508,6 @@ window.addEventListener("DOMContentLoaded", function () {
   //Al hacer scroll hacia abajo en la página, aparecer el boton de subir
   window.addEventListener("scroll", function () {
     let scrollPosition = window.scrollY;
-    
 
     if (scrollPosition > 300) {
       btnSubir.style.display = "block";
