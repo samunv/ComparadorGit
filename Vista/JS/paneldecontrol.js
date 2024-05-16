@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", function () {
       console.log(res);
       imprimirContenedores(res);
       eliminar(res);
+      actualizar(res);
     })
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
@@ -44,9 +45,9 @@ window.addEventListener("DOMContentLoaded", function () {
         "' class='imagenes' width='90' height='90'/>";
       html += "<div class='contenedor-editar'>";
       html +=
-        "<div id='actualizar" +
-        i +
-        "' class='actualizar'><img src='../img/cuadrado-de-la-pluma.png' alt='' width='30' height='30' title='editar'></div>";
+        "<div class='actualizar' id='" +
+        datos[i].idSO +
+        "'><img src='../img/cuadrado-de-la-pluma.png' alt='' width='30' height='30' title='editar'></div>";
       html +=
         "<div class='eliminar'><img id='" +
         datos[i].nombre +
@@ -60,6 +61,7 @@ window.addEventListener("DOMContentLoaded", function () {
   function eliminar(datos) {
     let ventanaEliminar = document.getElementById("ventana-eliminar-oculta");
     let btnCancelar = document.getElementById("btn-cancelar");
+    let overlay = document.getElementById("overlay");
     for (let i = 0; i < datos.length; i++) {
       let iconoEliminar = document.getElementById(datos[i].nombre);
 
@@ -67,17 +69,19 @@ window.addEventListener("DOMContentLoaded", function () {
 
       iconoEliminar.addEventListener("click", function (e) {
         ventanaEliminar.style.display = "flex";
+        overlay.style.display = "block";
 
         console.log(e.target, e.target.id);
 
         imprimirNombre.innerHTML = "" + e.target.id;
 
-        peticionEliminar(e.target.id); 
+        peticionEliminar(e.target.id);
       });
     }
 
     btnCancelar.addEventListener("click", function () {
       ventanaEliminar.style.display = "none";
+      overlay.style.display = "none";
     });
   }
 
@@ -91,8 +95,33 @@ window.addEventListener("DOMContentLoaded", function () {
       ).then((respuesta) => {
         respuesta.json();
         console.log(respuesta);
-        window.location.href = "paneldecontrol.php"; 
+        window.location.href = "paneldecontrol.php";
       });
     });
+  }
+
+  function actualizar(datos) {
+    for (let i = 0; i < datos.length; i++) {
+      let btnActualizar = document.getElementById(datos[i].idSO);
+      btnActualizar.addEventListener("click", function () {
+        console.log(datos[i].idSO);
+        window.location.href =
+          "actualizar.php?idSO=" +
+          datos[i].idSO +
+          "&nombre=" +
+          datos[i].nombre +
+          "&arquitectura=" +
+          datos[i].arquitectura +
+          "&fabricante=" +
+          datos[i].fabricante +
+          "&dispositivos=" +
+          datos[i].dispositivos +
+          "&imagen=" +
+          datos[i].imagen +
+          "&gratis=" +
+          datos[i].gratis +
+          "";
+      });
+    }
   }
 });

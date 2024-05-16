@@ -85,8 +85,30 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
         }
     }
 
-    public function actualizarSO(SistemaOperativo $so)
+    public function actualizarSO(SistemaOperativo $so, $idSO)
     {
+        $sql = "UPDATE so SET comunidad=?, seguridad=?, version=? WHERE idSO=?";
+        $consulta = $this->conexion->getConexion()->prepare($sql);
+
+
+        if ($consulta) {
+
+            $comunidad = $so->getComunidad();
+            $seguridad = $so->getSeguridad();
+            $version = $so->getVersion();
+            $id = $idSO; 
+
+            $consulta->bind_param("iisi", $comunidad, $seguridad, $version, $id);
+
+            $resultado = $consulta->execute();
+            if ($resultado) {
+                return "Sistema operativo actualizado exitosamente.";
+            } else {
+                return "Error al actualizar el sistema operativo";
+            }
+        } else {
+            return "Error al preparar la consulta";
+        }
     }
 
 

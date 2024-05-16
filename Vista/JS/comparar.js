@@ -1,6 +1,8 @@
 window.addEventListener("DOMContentLoaded", function () {
   let liComparar = document.getElementById("li-comparar");
   liComparar.style.fontWeight = "bold";
+  let btnSubir = document.getElementById("btn-subir");
+  btnSubir.style.display = "none"; 
 
   let seccionMoviles = document.getElementById("seccion-moviles");
   let seccionOrdenadores = document.getElementById("seccion-ordenadores");
@@ -62,6 +64,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
           if (btnComparar.disabled) {
             desactivarBoton(btnComparar);
+          } else if (!btnComparar.disabled) {
+            activarBoton(btnComparar);
           }
           // Si no se han seleccionado dos so se vuelve al estilo del boton desactivado
 
@@ -69,7 +73,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
           if (seleccionados.length === 2) {
             btnComparar.disabled = false;
-            if (!btnComparar.disabled) {
+            if (btnComparar.disabled) {
+              desactivarBoton(btnComparar);
+            } else if (!btnComparar.disabled) {
               activarBoton(btnComparar);
             }
 
@@ -94,6 +100,10 @@ window.addEventListener("DOMContentLoaded", function () {
     btnComparar.style.fontSize = "";
 
     btnComparar.addEventListener("mouseover", function () {
+      btnComparar.style.backgroundColor = "";
+      btnComparar.style.color = "";
+    });
+    btnComparar.addEventListener("mouseout", function () {
       btnComparar.style.backgroundColor = "";
       btnComparar.style.color = "";
     });
@@ -438,14 +448,30 @@ window.addEventListener("DOMContentLoaded", function () {
     html += "<button id='btn-cerrar' type='button'>Cerrar</button>";
 
     ventanaComparacion.style.display = "flex";
+
+    let overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
     ventanaComparacion.innerHTML = html;
 
     //Al pulsar en cerrar, no se mostrará la ventana
     let btnCerrar = document.getElementById("btn-cerrar");
     btnCerrar.addEventListener("click", function () {
       ventanaComparacion.style.display = "none";
+      overlay.style.display = "none";
     });
   }
+
+  //Al hacer scroll hacia abajo en la página, aparecer el boton de subir
+  window.addEventListener("scroll", function () {
+    let scrollPosition = window.scrollY;
+    
+
+    if (scrollPosition > 300) {
+      btnSubir.style.display = "block";
+    } else {
+      btnSubir.style.display = "none";
+    }
+  });
 
   // Hacer scroll en el carrusel con los botones
   var contenedor = document.getElementById("carrusel-dispositivos");

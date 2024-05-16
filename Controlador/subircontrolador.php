@@ -6,7 +6,6 @@ require_once '../Modelo/sistemaOperativoDAOImplementar.php';
 // Verificar si se recibieron los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES['imagen'])) {
-
         // Mover el archivo
         $directorio = "../img/";
 

@@ -20,12 +20,12 @@
     ?>
 
     <section id="carrusel-dispositivos">
-        <div class="caja-carrusel"><a href="#titulo-moviles"><img src="../img/SO Móviles prueba.png" alt=""></a></div>
-        <div class="caja-carrusel"><a href="#titulo-ordenadores"><img src="../img/SOpc-prueba3.png" alt=""></a></div>
-        <div class="caja-carrusel"><a href="#titulo-consolas"><img src="../img/SOconsolas.png" alt=""></a></div>
-        <div class="caja-carrusel"><a href="#titulo-tv"><img src="../img/SOtvs.png" alt=""></a></div>
-        <div class="caja-carrusel"><a href="#titulo-coches"><img src="../img/SOcoches2.png" alt=""></a></div>
-        <div class="caja-carrusel" id="elemento-invisible"></a></div>
+        <div class="caja-carrusel"><a href="#Móviles"><img src="../img/SO Móviles prueba.png" alt=""></a></div>
+        <div class="caja-carrusel"><a href="#Ordenadores"><img src="../img/SOpc-prueba3.png" alt=""></a></div>
+        <div class="caja-carrusel"><a href="#Consola"><img src="../img/SOconsolas.png" alt=""></a></div>
+        <div class="caja-carrusel"><a href="#TV"><img src="../img/SOtvs.png" alt=""></a></div>
+        <div class="caja-carrusel"><a href="#Coches"><img src="../img/SOcoches2.png" alt=""></a></div>
+
     </section>
     <section id="botones-scroll">
 
@@ -46,7 +46,7 @@
                     <br>
                     Comunidad: 0.5 puntos por Millón.
                     <br>
-                    Estatus: 10 puntos si es gratis.
+                    Gratis: 10 puntos si es gratis.
                 </p>
                 <img src="../img/cuenta.png" alt="" width="70" height="70">
             </div>
@@ -64,13 +64,15 @@
     </section>
 
 
+
+
     <section class="seccion-texto-boton">
         <section class="texto">
-            <section id="titulo-moviles" class="titulo">
+            <section id="Móviles" class="titulo">
                 <h1>Sistemas Operativos de Móviles</h1>
             </section>
             <section class="texto-explicativo">
-                <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+                <h3>Elige dos SO para comparar. Haz click en ellos para marcarlos.</h3>
             </section>
         </section>
         <div class="seccion-boton-comparar">
@@ -83,18 +85,16 @@
         <div id="btn-izquierda-moviles" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
     </section>
 
-
-
     <div id="ventana-comparacion" class="ventana-comparacion">comparar</div>
-
+    <div id="overlay" class="overlay"></div>
 
     <section class="seccion-texto-boton">
         <section class="texto">
-            <section id="titulo-ordenadores" class="titulo">
+            <section id="Ordenadores" class="titulo">
                 <h1>Sistemas Operativos de Ordenadores</h1>
             </section>
             <section class="texto-explicativo">
-                <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
+                <h3>Elige dos SO para comparar. Haz click en ellos para marcarlos.</h3>
             </section>
         </section>
         <div class="seccion-boton-comparar">
@@ -102,62 +102,69 @@
         </div>
     </section>
     <section id="seccion-ordenadores" class="secciones"></section>
-
     <section class="seccion-botones">
         <div id="btn-derecha-ordenadores" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
         <div id="btn-izquierda-ordenadores" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
     </section>
 
-
-
-    <section id="titulo-consolas" class="titulo">
-        <h1>Sistemas Operativos de Consolas</h1>
+    <section class="seccion-texto-boton">
+        <section class="texto">
+            <section id="Consola" class="titulo">
+                <h1>Sistemas Operativos de Consolas</h1>
+            </section>
+            <section class="texto-explicativo">
+                <h3>Elige dos SO para comparar. Haz click en ellos para marcarlos.</h3>
+            </section>
+        </section>
+        <div class="seccion-boton-comparar">
+            <button type="button" class="btn-comparar" id="btn-comparar-Consola">Comparar 🡪</button>
+        </div>
     </section>
-    <section class="texto-explicativo">
-        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
-    </section>
-
-
     <section id="seccion-consolas" class="secciones"></section>
-
     <section class="seccion-botones">
         <div id="btn-derecha-consolas" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
         <div id="btn-izquierda-consolas" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
     </section>
 
-
-
-    <section id="titulo-tv" class="titulo">
-        <h1>Sistemas Operativos de TVs</h1>
+    <section class="seccion-texto-boton">
+        <section class="texto">
+            <section id="TV" class="titulo">
+                <h1>Sistemas Operativos de TVs</h1>
+            </section>
+            <section class="texto-explicativo">
+                <h3>Elige dos SO para comparar. Haz click en ellos para marcarlos.</h3>
+            </section>
+        </section>
+        <div class="seccion-boton-comparar">
+            <button type="button" class="btn-comparar" id="btn-comparar-TV">Comparar 🡪</button>
+        </div>
     </section>
-    <section class="texto-explicativo">
-        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
-    </section>
-
     <section id="seccion-tv" class="secciones"></section>
-
     <section class="seccion-botones">
         <div id="btn-derecha-tv" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
         <div id="btn-izquierda-tv" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
     </section>
 
-
-
-    <section id="titulo-coches" class="titulo">
-        <h1>Sistemas Operativos de Coches</h1>
+    <section class="seccion-texto-boton">
+        <section class="texto">
+            <section id="Coches" class="titulo">
+                <h1>Sistemas Operativos de Coches</h1>
+            </section>
+            <section class="texto-explicativo">
+                <h3>Elige dos SO para comparar. Haz click en ellos para marcarlos.</h3>
+            </section>
+        </section>
+        <div class="seccion-boton-comparar">
+            <button type="button" class="btn-comparar" id="btn-comparar-Coches">Comparar 🡪</button>
+        </div>
     </section>
-    <section class="texto-explicativo">
-        <h3>Elige dos SO para comparar. Pulsa en ellos para marcarlos.</h3>
-    </section>
-
     <section id="seccion-coches" class="secciones"></section>
-
     <section class="seccion-botones">
         <div id="btn-derecha-coches" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45"></div>
         <div id="btn-izquierda-coches" class="botones"><img src="../img/circulo-de-flecha.png" alt="" width="45" height="45" class="izquierda"></div>
     </section>
 
-
+    <a href="#header"><button type="button" id="btn-subir" class="btn-subir">🡩</button></a>
 
     <?php
     include "footer.php"

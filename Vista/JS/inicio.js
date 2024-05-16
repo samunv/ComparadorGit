@@ -52,7 +52,9 @@ window.addEventListener("DOMContentLoaded", function () {
       html +=
         "<div id='comparar" +
         i +
-        "' class='comparar'><a href='../VistaUsuario/comparar.php'><img src='../img/flechas-repetir (3).png' alt='' width='25' height='25' title='comparar'></a></div>";
+        "' class='comparar'><a href='../VistaUsuario/comparar.php#" +
+        datos[i].dispositivos +
+        "'><img src='../img/flechas-repetir (3).png' alt='' width='25' height='25' title='comparar'></a></div>";
       html += "</div>";
       html += "</div>";
     }
@@ -134,10 +136,16 @@ window.addEventListener("DOMContentLoaded", function () {
 
     html += "<tr>";
     for (var i = 0; i < 3; i++) {
-      if (datos[i].comunidad >= 1000){
-        html += "<td> Top "+ (i + 1) + " <br>" + datos[i].nombre + "<br>"+datos[i].comunidad+" Mill.</td>";
+      if (datos[i].comunidad >= 1000) {
+        html +=
+          "<td> Top " +
+          (i + 1) +
+          " <br>" +
+          datos[i].nombre +
+          "<br>" +
+          datos[i].comunidad +
+          " Mill.</td>";
       }
-     
     }
     html += "</tr>";
 

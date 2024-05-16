@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function () {
       html +=
         "<div id='comparar" +
         i +
-        "' class='comparar'><a href='../VistaUsuario/comparar.php'><img src='../img/flechas-repetir (3).png' alt='' width='25' height='25' title='comparar'></a></div>";
+        "' class='comparar'><a href='../VistaUsuario/comparar.php#"+datos[i].dispositivos+"'><img src='../img/flechas-repetir (3).png' alt='' width='25' height='25' title='comparar'></a></div>";
       html += "</div>";
 
       html += "</div>";

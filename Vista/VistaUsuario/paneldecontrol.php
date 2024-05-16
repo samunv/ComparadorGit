@@ -27,7 +27,7 @@
     </section>
 
     <section class="secciones" id="seccion-administrar-datos">
-    <h1>Administrar Datos</h1>
+        <h1>Administrar Datos</h1>
         <section id="seccion-contenedores"></section>
     </section>
 
@@ -37,21 +37,21 @@
         <img src="../img/advertencia.png" alt="advertencia" width="200" height="200">
         <h2>¿Estás seguro de que quieres eliminar <span id="nombre-del-so"></span>?</h2>
         <form id="formulario-eliminar">
-        
-        <div class="caja-botones">
-        <button type="button" id="btn-eliminar" >Eliminar</button>
-        <button type="button" id="btn-cancelar">Cancelar</button>
-        </div>
-       
-        </form>
-        
-    </div>
 
-    <div id="resultado"></div>
-   
+            <div class="caja-botones">
+                <button type="button" id="btn-eliminar">Eliminar</button>
+                <button type="button" id="btn-cancelar">Cancelar</button>
+            </div>
+
+        </form>
+
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+
 
     <section class="secciones" id="seccion-administrar-usuarios">
-    <h1>Administrar Usuarios</h1>
+        <h1>Administrar Usuarios</h1>
         <section id="seccion-tabla"></section>
     </section>
 

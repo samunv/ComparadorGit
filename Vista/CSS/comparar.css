@@ -126,24 +126,41 @@ header {
 
 
 
-
-
+.btn-subir {
+    background-color: #0071e3;
+    color: white;
+    font-size: 18px;
+    border: #0071e3 1px solid;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    left: 95%;
+    top: 88%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-subir:hover{
+    color: #0071e3;
+    background-color: transparent;
+    border: 1px #0071e3 solid;
+}
 
 #carrusel-dispositivos {
-    height: 600px;
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
     justify-content: space-around;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 60px;
     padding-left: 50px;
     padding-right: 50px;
-    margin-bottom: 50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
 }
 
@@ -153,7 +170,7 @@ header {
 
 #botones-scroll {
     position: absolute;
-    bottom: 5px;
+    bottom: 0px;
     left: 85.8%;
     display: flex;
     flex-direction: row-reverse;
@@ -209,17 +226,6 @@ header {
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-
-#elemento-invisible {
-    background-color: #ececf0;
-    width: 50px;
-}
-
-#elemento-invisible:hover {
-    cursor: default;
-    box-shadow: none;
-}
-
 
 #seccion-porque-oscomparer {
 
@@ -284,7 +290,7 @@ header {
     margin-top: 50px;
     padding-top: 70px;
     color: black;
-    font-size: 30px;
+    font-size: 45px;
     text-align: left;
     margin-left: 65px;
 
@@ -293,11 +299,12 @@ header {
 .texto-explicativo h3 {
     margin-left: 65px;
     color: grey;
+    font-weight: lighter;
 }
 
 .seccion-boton-comparar {
     margin-right: 65px;
-height: auto;
+    height: auto;
 }
 
 .btn-comparar {
@@ -362,6 +369,7 @@ height: auto;
     flex: 1 0 auto;
     background-color: white;
     border-radius: 20px;
+    border: 2px white solid;
     color: grey;
     width: 400px;
     margin: 20px;
@@ -369,6 +377,7 @@ height: auto;
     padding: 20px;
     text-align: center;
     overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(140, 144, 146, 0.5);
 
 
 }
@@ -401,7 +410,6 @@ height: auto;
 
 .ventana-comparacion {
     background-color: white;
-    border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
     color: grey;
     height: 500px;
@@ -418,6 +426,23 @@ height: auto;
     transform: translate(-50%, -50%);
     padding: 20px;
 
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Color oscuro semitransparente */
+    z-index: 998;
+    /* Debajo del modal */
+    display: none;
+}
+
+.ventana-comparacion h3 {
+    color: black;
 }
 
 .ventana-comparacion h1 {
@@ -476,6 +501,7 @@ h3 {
 
     body {
         width: 430px;
+        overflow-x: hidden;
     }
 
     #header {
@@ -597,6 +623,7 @@ h3 {
     #carrusel-dispositivos {
         height: 400px;
         padding-top: 20px;
+        padding-bottom: 5px;
         margin-bottom: 10px;
     }
 
@@ -605,7 +632,11 @@ h3 {
         height: auto;
         font-size: smaller;
         position: fixed;
-        left: 41%;
+        text-align: center;
+    }
+
+    .ventana-comparacion h1 {
+        padding: 10px;
     }
 
     .caja-general {
@@ -626,10 +657,16 @@ h3 {
     }
 
     .contenedor-canvas {
-        width: 100px;
-        height: 50px;
-        display: none;
+        width: 220px;
+        height: 180px;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+    canvas {
+        margin-left: 0%;
+    }
+
 
     #so1 img,
     #so2 img {
@@ -638,13 +675,15 @@ h3 {
     }
 
     .titulo {
-        margin-left: 20px;
-        font-size: smaller;
+        margin-left: 0%;
+        text-align: center;
+        font-size: 24px;
     }
 
     .texto-explicativo h3 {
-        margin-left: 20px;
+        margin-left: 0%;
         font-size: smaller;
+        text-align: center;
     }
 
     .secciones {
@@ -678,6 +717,7 @@ h3 {
 
     }
 
+
     .cajas-respuestas p {
 
         width: 190px;
@@ -694,6 +734,25 @@ h3 {
         padding: 20px;
         width: 50px;
         height: 50px;
+    }
+
+
+    .seccion-boton-comparar {
+
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .seccion-boton-comparar button {
+        margin-top: 20px;
+    }
+
+    .seccion-texto-boton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
     }
 
 }
