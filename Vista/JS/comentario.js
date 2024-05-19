@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", function () {
   var idUsuario = sessionStorage.getItem("idUsuario");
   var nombreUsuario = sessionStorage.getItem("nombreUsuario");
   var permisosAdmin = sessionStorage.getItem("permisosAdmin");
+  
 
   // Obtener los input y cambiar su valor, para posteriormente enviarlo como un dato
   var inputIdUsuario = document.getElementById("input-idUsuario");
@@ -45,7 +46,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let res;
 
-  // Realizar una solicitud
+  // Realizar una solicitud para obtener los comentarios
   fetch("./../../Controlador/comentarioscontrolador.php")
     .then((respuesta) => respuesta.json())
     .then((data) => {
@@ -59,8 +60,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function imprimirComentarios(datos) {
     let html = "";
-    //Imprimir los comentarios con los datos necesarios
 
+    //Imprimir los comentarios del último al primero, para imprimir los últimos comentarios al principio
+    //Para ello se recorren de forma inversa. 
+    //i es igual que la longitud de los datos - 1 para comenzar desde el índice del último elemento.
+    // Luego, en la condición, i debe ser mayor o igual que 0.
+    //Por último, i irá disminuyendo de uno en uno.
     for (let i = datos.length - 1; i >= 0; i--) {
       html += "<div class='comentarios'>";
       html += "<h3>" + datos[i].nombreUsuario + "</h3>";
