@@ -54,7 +54,7 @@
         </select><br>
 
         <input type="submit" value="Subir" id="btn-subir">
-        <a href="paneldecontrol.php"><button type="button" id="btn-volver-atras">Volver atras</button></a>
+        <a href="paneldecontrol.php"><button type="button" id="btn-volver-atras">Volver atrás</button></a>
     </form>
 </body>
 

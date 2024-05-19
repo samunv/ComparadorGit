@@ -7,10 +7,29 @@ footer {
     height: 200px;
     margin-top: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+}
 
+.enlace{
+    margin-bottom: 50px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.caja-enlaces p{
+    padding: 10px;
+}
+.enlace:hover{
+    color: #0071e3;
+}
+.enlaces-externos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer img {
@@ -20,6 +39,11 @@ footer img {
 
 }
 
-footer img:hover{
+footer img:hover {
     opacity: 0.5;
+}
+
+.caja-enlaces{
+    width: 310px;
+    display: flex;
 }

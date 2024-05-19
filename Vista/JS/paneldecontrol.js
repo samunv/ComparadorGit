@@ -1,8 +1,8 @@
 window.addEventListener("DOMContentLoaded", function () {
   let seccionContenedores = document.getElementById("seccion-contenedores");
-  let res; // Variable para almacenar la respuesta de la API
+  let res; // Variable para almacenar la respuesta
 
-  // Realiza una solicitud a la API utilizando fetch
+  // Realiza una solicitud  utilizando fetch
   fetch("/ComparadorGit/Controlador/panelcontrolador.php")
     .then((respuesta) => respuesta.json())
     .then((data) => {
@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
       console.error("Error al realizar la solicitud:", error);
     });
 
+  // Función para imprimir los contenedores en la página
   function imprimirContenedores(datos) {
     let html = "";
     html += "<div class='contenedores' id='contenedor-subir'>";
@@ -25,10 +26,11 @@ window.addEventListener("DOMContentLoaded", function () {
     html += "</a>";
     html += "</div>";
 
+    // Itera sobre los datos para crear contenedores dinámicamente
     for (let i = 0; i < datos.length; i++) {
       html += "<div class='contenedores' id='contenedor" + i + "'>";
       html += "<h3>" + datos[i].nombre + "</h3>";
-      html += "<div id='info-detallada" + i + "' >";
+      html += "<div id='info-detallada" + i + "'>";
       html += "<p>Desarrollador: " + datos[i].fabricante + "</p>";
       html += "<p>Arquitectura: " + datos[i].arquitectura + "</p>";
       html += "<p>Comunidad: " + datos[i].comunidad + " Mill.</p>";
@@ -58,53 +60,62 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionContenedores.innerHTML = html;
   }
 
+  // Función para manejar la eliminación de contenedores
   function eliminar(datos) {
     let ventanaEliminar = document.getElementById("ventana-eliminar-oculta");
     let btnCancelar = document.getElementById("btn-cancelar");
     let overlay = document.getElementById("overlay");
+
+    // Agregar eventos a los iconos de eliminar
     for (let i = 0; i < datos.length; i++) {
       let iconoEliminar = document.getElementById(datos[i].nombre);
-
       let imprimirNombre = document.getElementById("nombre-del-so");
 
       iconoEliminar.addEventListener("click", function (e) {
+        //Al pulsar en el icono de eliminar, abrir la ventana y el overlay
         ventanaEliminar.style.display = "flex";
         overlay.style.display = "block";
 
-        console.log(e.target, e.target.id);
-
+        //Coger el nombre del so (guardado como id del icono de eliminar), mediante el target del objeto e
         imprimirNombre.innerHTML = "" + e.target.id;
 
+        //Pasarlo como parametro a peticionEliminar()
         peticionEliminar(e.target.id);
       });
     }
 
+    // Cierra la ventana de confirmación de eliminación
     btnCancelar.addEventListener("click", function () {
       ventanaEliminar.style.display = "none";
       overlay.style.display = "none";
     });
   }
 
+  // Función para realizar la petición de eliminación
   function peticionEliminar(nombreSO) {
     let btnEliminar = document.getElementById("btn-eliminar");
 
     btnEliminar.addEventListener("click", function () {
-      console.log("datos: ");
-      fetch(
-        "./../../Controlador/eliminarcontrolador.php?nombre=" + nombreSO
-      ).then((respuesta) => {
-        respuesta.json();
-        console.log(respuesta);
-        window.location.href = "paneldecontrol.php";
-      });
+      //Pasar el nombre del SO mediante el método get a eliminarcontrolador
+      fetch("./../../Controlador/eliminarcontrolador.php?nombre=" + nombreSO)
+        .then((respuesta) => respuesta.json())
+        .then(() => {
+          // Recargar la página del panel
+          window.location.href = "paneldecontrol.php";
+        })
+        .catch((error) => {
+          console.error("Error al eliminar:", error);
+        });
     });
   }
 
+  // Función para manejar la actualización de los SO
   function actualizar(datos) {
     for (let i = 0; i < datos.length; i++) {
       let btnActualizar = document.getElementById(datos[i].idSO);
+
+      // Al pulsar en actualizar, enviar los datos del SO como parámetros en la URL de la pestaña
       btnActualizar.addEventListener("click", function () {
-        console.log(datos[i].idSO);
         window.location.href =
           "actualizar.php?idSO=" +
           datos[i].idSO +
@@ -119,8 +130,7 @@ window.addEventListener("DOMContentLoaded", function () {
           "&imagen=" +
           datos[i].imagen +
           "&gratis=" +
-          datos[i].gratis +
-          "";
+          datos[i].gratis;
       });
     }
   }

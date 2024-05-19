@@ -61,6 +61,7 @@
                 <img src="../img/comentario-alt (1).png" alt="" width="70" height="70">
             </div>
         </div>
+        <a href="comentarios.php" id="ir-a-comentarios">Ir a Comentarios <span id="flecha">▷</span></a>
     </section>
 
 

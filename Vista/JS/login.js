@@ -24,9 +24,6 @@ window.addEventListener("DOMContentLoaded", function () {
             alerta.style.display = "none";
           });
         } else {
-          //Guardamos el nombre de usuario del json recibido en nombreUsuario
-          var nombreUsuario = data.usuario[0].nombreUsuario;
-
           // ---------------------Guardar los datos en la sesión---------------------
 
           /*Utilizamos el objeto sessionStorage, el cual almacena temporalmente datos en el lado del cliente (en nuestro caso, el nombre de usuario y 
@@ -34,19 +31,25 @@ window.addEventListener("DOMContentLoaded", function () {
            cuando la sesión en el navegador esté activada. Si se cierran als pestañas, se perderán los datos*/
 
           //El método setItem() almacena el nombre del usuario (nombreUsuario) con la clave "nombreUsuario"
+
+          //Guardamos el nombre de usuario del json recibido en nombreUsuario
+          var nombreUsuario = data.usuario[0].nombreUsuario;
           sessionStorage.setItem("nombreUsuario", nombreUsuario);
+          var idUsuario = data.usuario[0].idUsuario;
+          sessionStorage.setItem("idUsuario", idUsuario);
+
+          
 
           var permisosAdmin = data.usuario[0].admin;
           console.log("Permisos de administrador:", permisosAdmin);
-
+          console.log(data.usuario[0]); 
           if (data.usuario[0].admin === "1") {
             //Entrar como administrador si el campo admin vale 1
             sessionStorage.setItem("permisosAdmin", permisosAdmin);
-            window.location.href =
-              "./Vista/VistaUsuario/paneldecontrol.php";
+            window.location.href = "./Vista/VistaUsuario/paneldecontrol.php";
           } else {
-            window.location.href =
-              "./Vista/VistaUsuario/inicio.php";
+            sessionStorage.setItem("permisosAdmin", permisosAdmin);
+            window.location.href = "./Vista/VistaUsuario/inicio.php";
           }
         }
       });

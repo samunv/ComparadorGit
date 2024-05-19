@@ -142,7 +142,8 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.btn-subir:hover{
+
+.btn-subir:hover {
     color: #0071e3;
     background-color: transparent;
     border: 1px #0071e3 solid;
@@ -233,6 +234,8 @@ header {
     color: white;
     padding-top: 50px;
     padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -251,7 +254,6 @@ header {
     justify-content: center;
     flex-direction: row;
     align-items: stretch;
-    padding-bottom: 120px;
 }
 
 .cajas-respuestas {
@@ -285,6 +287,22 @@ header {
 .cajas-respuestas img {
     padding: 30px;
 }
+
+#ir-a-comentarios {
+    color: #0071e3;
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ir-a-comentarios:hover {
+    text-decoration: underline;
+}
+
 
 .titulo {
     margin-top: 50px;
@@ -753,6 +771,9 @@ h3 {
         flex-direction: column;
         align-items: center;
 
+    }
+    .btn-subir {
+        display: none;
     }
 
 }

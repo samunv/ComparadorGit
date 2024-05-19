@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../JS/actualizar.js?v=<?php echo time() ?>"></script>
+    <title>OScomparer | Actualizar SO</title>
+    <link rel="stylesheet" href="../CSS/actualizar.css?v=<?php echo time() ?>">
+    <script src="../JS/actualizar.js?v=<?php echo time() ?>"></script>´
+    <link rel="icon" href="../img/flechas-repetir (1).png" />
 
 </head>
 
@@ -19,16 +21,18 @@
         <label for="version">Version Nueva:</label><br>
         <input type="text" name="version" id="version" maxlength="15" placeholder="Versión" required>
 
-<h1>Datos que no se pueden cambiar:</h1>
-        <input type="text" value="nombre" readonly name="nombre" id="input-nombre">
-        <input type="text" value="fabricante" readonly name="fabricante" id="input-fabricante">
-        <input type="text" value="idSO" readonly name="idSO" id="input-idSO">
-        <input type="text" value="arquitectura" readonly name="arquitectura" id="input-arquitectura">
-        <input type="text" value="dispositivos" readonly name="dispositivos" id="input-dispositivos">
-        <input type="text" value="gratis" readonly name="gratis" id="input-gratis">
-        <input type="text" value="imagen" readonly name="imagen" id="input-imagen">
+
+        <input type="text" value="nombre" readonly name="nombre" id="input-nombre" class="input-oculto">
+        <input type="text" value="fabricante" readonly name="fabricante" id="input-fabricante" class="input-oculto">
+        <input type="text" value="idSO" readonly name="idSO" id="input-idSO" class="input-oculto">
+        <input type="text" value="arquitectura" readonly name="arquitectura" id="input-arquitectura" class="input-oculto">
+        <input type="text" value="dispositivos" readonly name="dispositivos" id="input-dispositivos" class="input-oculto">
+        <input type="text" value="gratis" readonly name="gratis" id="input-gratis" class="input-oculto">
+        <input type="text" value="imagen" readonly name="imagen" id="input-imagen" class="input-oculto">
 
         <button type="submit" id="btn-actualizar">Actualizar</button>
+
+        <a href="paneldecontrol.php"><button type="button" id="btn-volver-atras">Volver atrás</button></a>
     </form>
 </body>
 

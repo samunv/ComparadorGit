@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
+  //Obtener todos los parámetros del SO enviados a la URL utilizando el método get() de la clase URLSearchParams
   var idSO = new URLSearchParams(window.location.search).get("idSO");
   var nombre = new URLSearchParams(window.location.search).get("nombre");
   var fabricante = new URLSearchParams(window.location.search).get(
@@ -15,9 +16,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
   console.log(nombre);
   console.log(idSO);
+
   let imprimirNombre = document.getElementById("nombre-del-so");
   imprimirNombre.innerHTML = nombre;
 
+  //Obtener los input de cada dato, para cambiar su valor, al valor proporcionado en la url
   let inputIdSo = document.getElementById("input-idSO");
   inputIdSo.value = idSO;
   let inputNombre = document.getElementById("input-nombre");
@@ -33,15 +36,20 @@ window.addEventListener("DOMContentLoaded", function () {
   let inputDispositivos = document.getElementById("input-dispositivos");
   inputDispositivos.value = dispositivos;
 
+  //Obtener el formulario
   let formulario = document.getElementById("formulario-actualizar");
 
   console.log(imagen);
 
-  formulario.addEventListener("submit", function (evento) {
-    evento.preventDefault();
+  formulario.addEventListener("submit", function (e) {
+    //Evitar que la página se recargue
+    e.preventDefault();
 
+    // crear un objeto datos de la clase FormData pasando como parámetro los datos del formulario
     let datos = new FormData(formulario);
     console.log(datos);
+
+    //Enviar datos utilizando Post
     fetch("./../../Controlador/actualizarcontrolador.php", {
       method: "POST",
       body: datos,

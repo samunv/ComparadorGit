@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="../JS/header.js"></script>
-  <script src="../JS/sesion.js?v=<?php echo time(); ?>"></script>
+  <script src="../JS/header.js?v=<?php echo time(); ?>"></script>
 </head>
 
 <body>
@@ -27,6 +26,7 @@
         <li id="li-comparar"><a href="comparar.php">Comparar</a></li>
 
         <li id="li-buscar"><a href="paginainfo.php">Buscar</a></li>
+
       </ul>
     </nav>
 

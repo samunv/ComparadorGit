@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
+  //Si estamos en buscar, poner en negrita el enlace del nav
   let liBuscar = document.getElementById("li-buscar");
   liBuscar.style.fontWeight = "bold";
 
@@ -51,11 +52,7 @@ window.addEventListener("DOMContentLoaded", function () {
         i +
         "' class='imagenes' width='90' height='90'/>";
       html += "<div class='contenedor-comentarios-comparar'>";
-      html +=
-        "<div id='comentario" +
-        i +
-        "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
-      html +=
+     html +=
         "<div id='comparar" +
         i +
         "' class='comparar'><a href='../VistaUsuario/comparar.php#"+datos[i].dispositivos+"'><img src='../img/flechas-repetir (3).png' alt='' width='25' height='25' title='comparar'></a></div>";
@@ -87,6 +84,7 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   function buscar(datos) {
+    //Obtener el valor del input del buscador en minúsculas
     const textoEntrada = buscador.value.toLowerCase();
 
     // Buscar los datos comprobando que coincida el textoEntrada con el nombre de los SO
@@ -96,11 +94,13 @@ window.addEventListener("DOMContentLoaded", function () {
     for (const sistemaOperativo of datos) {
       //datos es un array al que le asignamos a cada objeto la variable sistemaOperativo
       if (sistemaOperativo.nombre.toLowerCase().includes(textoEntrada)) {
+        //Si el nombre del SO en minúsculas, incluye el texto de entrada, añadir el SO al array de datosEncontrados
+        //con el método push
         datosEncontrados.push(sistemaOperativo);
-        //El método push sirve para añadir cada sistemaOperativo al array de datosEncontrados
       }
     }
 
+    //Imprimir los contenedores de los SO encontrados
     imprimirContenedores(datosEncontrados);
   }
 
@@ -120,6 +120,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  //Aplicar la misma lógica de filtrado de so de móviles a los demás filtros
   function filtrarOrdenadores(datos) {
     let iconoPc = document.getElementById("icono-pc");
     iconoPc.addEventListener("click", function () {

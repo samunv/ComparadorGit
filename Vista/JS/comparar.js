@@ -57,12 +57,23 @@ window.addEventListener("DOMContentLoaded", function () {
         contenedor.addEventListener("click", function seleccionar() {
           //Al hacer click en un contenedor, verificar si ya está seleccionado o no
           if (seleccionados.includes(datos[i])) {
-            // Si el so ya está seleccionado, lo deseleccionamos
+            // Si el so ya está seleccionado, lo deseleccionamos quitando el estilo de selección
             contenedor.style.borderWidth = "";
             contenedor.style.borderStyle = "";
             contenedor.style.borderColor = "";
             btnComparar.disabled = true;
-            seleccionados = seleccionados.filter((so) => so !== datos[i]); // Eliminar el dispositivo del array de seleccionados con el método filter()
+
+            // Para eliminar los SO seleccionados:
+            seleccionados = seleccionados.filter(function (so) {
+              // La función filter recorre cada elemento del array 'seleccionados'
+              // Para cada elemento 'so', se realiza esta función
+              // 'so' representa un sistema operativo en 'seleccionados'
+
+              return so !== datos[i];
+              // La función devuelve 'true' si 'so' es diferente al sistema operativo 'datos[i]'.
+              // De lo contrario, devuelve 'false'.
+
+            });
           } else if (seleccionados.length < 2) {
             // Si aún no se han seleccionado dos so, seleccionamos este
             contenedor.style.borderWidth = "2px"; // Grosor del borde
@@ -178,11 +189,7 @@ window.addEventListener("DOMContentLoaded", function () {
           "' id='imagen" +
           i +
           "' class='imagenes' width='90' height='90'/>";
-        html +=
-          "<div id='comentario" +
-          i +
-          "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
-        html += "</div>";
+       html += "</div>";
       }
     }
 
@@ -212,11 +219,7 @@ window.addEventListener("DOMContentLoaded", function () {
           "' id='imagen" +
           i +
           "' class='imagenes' width='90' height='90'/>";
-        html +=
-          "<div id='comentario" +
-          i +
-          "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
-        html += "</div>";
+       html += "</div>";
       }
     }
 
@@ -246,11 +249,7 @@ window.addEventListener("DOMContentLoaded", function () {
           "' id='imagen" +
           i +
           "' class='imagenes' width='90' height='90'/>";
-        html +=
-          "<div id='comentario" +
-          i +
-          "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
-        html += "</div>";
+         html += "</div>";
       }
     }
 
@@ -280,10 +279,6 @@ window.addEventListener("DOMContentLoaded", function () {
           "' id='imagen" +
           i +
           "' class='imagenes' width='90' height='90'/>";
-        html +=
-          "<div id='comentario" +
-          i +
-          "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
         html += "</div>";
       }
     }
@@ -314,10 +309,6 @@ window.addEventListener("DOMContentLoaded", function () {
           "' id='imagen" +
           i +
           "' class='imagenes' width='90' height='90'/>";
-        html +=
-          "<div id='comentario" +
-          i +
-          "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
         html += "</div>";
       }
     }
@@ -363,7 +354,6 @@ window.addEventListener("DOMContentLoaded", function () {
       total2 += 0;
     }
 
-
     let ganador = ""; //Crear una variable para guardar los datos del so ganador
 
     if (total1 > total2) {
@@ -373,7 +363,6 @@ window.addEventListener("DOMContentLoaded", function () {
       //Si el total2 es mayor al total1, se asignará la variable ganador al so2
       ganador = so2.nombre;
     } else if (total1 == total2) {
-      
       //console.log("empate");
     }
 

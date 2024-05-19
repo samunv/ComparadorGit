@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  //Marcar el texto de inicio del nav cuando esté en esta página
+  //Marcar el texto de inicio del nav cuando se esté en esta página
   let liInicio = document.getElementById("li-inicio");
   liInicio.style.fontWeight = "bold";
 
@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", function () {
       console.error("Error al realizar la solicitud:", error);
     });
 
+  //Función para imprimir los contenedores de los SO con los datos necesarioss
   function imprimirContenedores(datos) {
     let html = "";
 
@@ -46,10 +47,6 @@ window.addEventListener("DOMContentLoaded", function () {
         "' class='imagenes' width='90' height='90'/>";
       html += "<div class='contenedor-comentarios-comparar'>";
       html +=
-        "<div id='comentario" +
-        i +
-        "' class='comentarios'><img src='../img/comentario-alt.png' alt='' width='25' height='25' title='comentarios'></div>";
-      html +=
         "<div id='comparar" +
         i +
         "' class='comparar'><a href='../VistaUsuario/comparar.php#" +
@@ -61,6 +58,7 @@ window.addEventListener("DOMContentLoaded", function () {
     seccionPrincipal.innerHTML = html;
   }
 
+  //Imprimir las celdas de las tablas de cada SO
   function imprimirCeldas(datos, nombre1, nombre2, nombre3, nombre4) {
     let tr1 = document.getElementById("tr-1");
     let tr2 = document.getElementById("tr-2");
@@ -114,14 +112,21 @@ window.addEventListener("DOMContentLoaded", function () {
     tr4.innerHTML = html4;
   }
 
+  //Función para imprimir el top de SO
   function imprimirTop(datos) {
     let cajaTop = document.getElementById("datos-top-so");
     let html = "<table id='tabla-top'>";
 
-    datos.sort((a, b) => b.comunidad - a.comunidad);
+    //El método sort() modifica el array datos, para ordenarlo, en este caso, de mayor a menor tomando en cuenta
+    //el valor de la comunidad de cada SO.
+    //En él creamos una función de comparación, comparando a y b, que son dos objetos del array.
+    //SE realiza la comparación entre dos objetos del array, recorriendolo entero, y por tanto, colocandolos en orden de mayor a menor
+    datos.sort(function (a, b) {
+      return b.comunidad - a.comunidad;
+    });
 
-    // Suponiendo que datos es un arreglo de objetos con propiedades 'imagen' y 'nombre'
     html += "<tr>";
+    //Imprimir las imágenes
     for (let i = 0; i < 3; i++) {
       if (datos[i].comunidad >= 1000) {
         html +=
@@ -135,6 +140,7 @@ window.addEventListener("DOMContentLoaded", function () {
     html += "</tr>";
 
     html += "<tr>";
+    //Imprimir el texto
     for (var i = 0; i < 3; i++) {
       if (datos[i].comunidad >= 1000) {
         html +=
@@ -153,6 +159,8 @@ window.addEventListener("DOMContentLoaded", function () {
     cajaTop.innerHTML = html;
   }
 
+  //Carrusel
+  //Crear un array con las imagenes
   var imagenes = [
     "../img/iOS.png",
     "../img/PS4 OS.png",
@@ -162,17 +170,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
   var carruselActivo = true; // Variable para ver si el carrusel está activo
 
-  var indiceImagenActual = 0;
+  var indiceImagenActual = 0; //Establecer el índice en 0
 
   var img = document.getElementById("foto-carrusel");
 
-  // CambiarImagen cada 5 segundos
+  // Llamar a la función CambiarImagen cada 5 segundos
   setInterval(cambiarImagen, 5000);
 
   // Función para cambiar la imagen del carrusel
   function cambiarImagen() {
     if (carruselActivo) {
-      // Cambiamos la imagen a la del indice
+      // Cambiamos la imagen a la del indice actual
       img.src = imagenes[indiceImagenActual];
 
       // Se actualiza el índice de la imagen actual
