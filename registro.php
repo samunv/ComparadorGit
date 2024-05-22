@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro</title>
+    <title>OScomparer | Registro</title>
     <link rel="icon" href="../img/flechas-repetir (1).png">
     <link rel="stylesheet" href="Vista/CSS/registrarse.css?v=<?php echo time() ?>" />
     <script src="Vista/JS/registro.js?v=<?php echo time() ?>"></script>
@@ -19,6 +19,7 @@
         <input type="password" id="contrasenaNueva" name="contrasenaNueva" required placeholder="Contraseña" maxlength="15"/><br />
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required placeholder="Email" minlength="10" maxlength="25" /><br />
+        <input type="text" readonly id="admin" value="0" name="admin">
         <button type="submit" class="btn-registrarse">Registrarse</button>
     </form>
     <a href="login.php">

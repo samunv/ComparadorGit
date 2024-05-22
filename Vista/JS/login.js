@@ -3,6 +3,10 @@ window.addEventListener("DOMContentLoaded", function () {
   let alerta = document.getElementById("alerta");
   let btnAlerta = document.getElementById("btn-alerta");
 
+
+  
+  let overlay = document.getElementById("overlay");
+
   formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
 
@@ -20,8 +24,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
         if (data.error) {
           alerta.style.display = "flex";
+          overlay.style.display = "block";
           btnAlerta.addEventListener("click", function () {
             alerta.style.display = "none";
+            overlay.style.display = "none";
           });
         } else {
           // ---------------------Guardar los datos en la sesión---------------------

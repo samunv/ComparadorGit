@@ -17,6 +17,7 @@
     <?php
     include("header.php");
     ?>
+    <section id="seccion-en-blanco"></section>
     <section id="seccion-filtros">
         <table class="tabla-filtros">
             <tr>

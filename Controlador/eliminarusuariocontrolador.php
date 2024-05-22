@@ -1,20 +1,20 @@
 <?php
-require_once "../Modelo/SistemaOperativoDAOImplementar.php";
-
-$nombreSO = $_GET["nombreSO"];
-
-// Instanciar el DAO
-$daoSoImp = new SistemaOperativoDAOimplementar();
+require_once "../Modelo/UsuarioDAOimplementar.php";
 
 
+$nombreUsuario = $_GET["nombreusuario"];
 
-$datos = $daoSoImp->eliminar($nombreSO);
+$daoUsuarioImp = new UsuarioDAOimplementar();
+
+
+$usuario = $daoUsuarioImp->eliminarUsuario($nombreUsuario);
 
 // Crear un array para almacenar los datos de respuesta
 $array = array();
 
 
-if (!empty($nombreSO)) {
+// Si se elimina
+if (!empty($nombreUsuario)) {
     $array["exito"] = "exito";
 
     // Si no se elimina
@@ -22,6 +22,6 @@ if (!empty($nombreSO)) {
 }
 
 
+
 // Convertir el array de respuesta como JSON y enviarlo como respuesta
 echo json_encode($array);
-?>

@@ -35,6 +35,16 @@ class SistemaOperativoDAOimplementar implements SistemaOperativoDAO
         return json_encode($datosArray);
     }
 
+    public function leerSOsinJson()
+    {
+        $consulta = mysqli_query($this->conexion->getConexion(), "SELECT * FROM so") or die("Error en consulta: " . mysqli_error($this->conexion->getConexion()));
+        $datosArray = array();
+        while ($reg = mysqli_fetch_array($consulta)) {
+            $datosArray[] = $reg;
+        }
+        return $datosArray;
+    }
+
     /**
      * Función para subir/crear un SO en la base de datos.
      *

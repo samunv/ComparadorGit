@@ -44,6 +44,7 @@
 
   <div id="pestana-cerrar-sesion">
     <p id="cerrar-sesion">Cerrar sesión</p>
+    <p>Editar Perfil</p>
     <a href='paneldecontrol.php' id="enlace-panel-oculto">Panel de Control</a>
   </div>
 

@@ -3,7 +3,6 @@ window.addEventListener("DOMContentLoaded", function () {
   var idUsuario = sessionStorage.getItem("idUsuario");
   var nombreUsuario = sessionStorage.getItem("nombreUsuario");
   var permisosAdmin = sessionStorage.getItem("permisosAdmin");
-  
 
   // Obtener los input y cambiar su valor, para posteriormente enviarlo como un dato
   var inputIdUsuario = document.getElementById("input-idUsuario");
@@ -29,7 +28,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // crear un objeto FormData para guardar los datos del formulario
     let datos = new FormData(formulario);
-  
 
     //Utilizar fetch para enviar los datos con el método post al controlador
     fetch("./../../Controlador/subircomentariocontrolador.php", {
@@ -62,13 +60,18 @@ window.addEventListener("DOMContentLoaded", function () {
     let html = "";
 
     //Imprimir los comentarios del último al primero, para imprimir los últimos comentarios al principio
-    //Para ello se recorren de forma inversa. 
+    //Para ello se recorren de forma inversa.
     //i es igual que la longitud de los datos - 1 para comenzar desde el índice del último elemento.
     // Luego, en la condición, i debe ser mayor o igual que 0.
     //Por último, i irá disminuyendo de uno en uno.
     for (let i = datos.length - 1; i >= 0; i--) {
       html += "<div class='comentarios'>";
-      html += "<h3>" + datos[i].nombreUsuario + "</h3>";
+      html +=
+        "<h3 id='nombre-del-usuario" +
+        i +
+        "'>" +
+        datos[i].nombreUsuario +
+        "</h3>";
       html += "<p>" + datos[i].contenido + "<p>";
       html += "</div>";
     }

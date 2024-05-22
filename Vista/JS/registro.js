@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
         console.log(data);
         if (data.registro === "registrado") {
           //Si se recibe el texto "registrado", llevar al login para poder iniciar sesión
-          window.location.href = "../ComparadorGit/login.php";
+          window.location.href = "../ComparadorGit/index.php";
         }
       });
   });

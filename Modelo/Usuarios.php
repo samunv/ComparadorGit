@@ -16,11 +16,12 @@ class Usuarios
     private $contrasena;
     private $permisosAdmin;
 
-    public function __construct($nombreUsuario, $email, $contrasena)
+    public function __construct($nombreUsuario, $email, $contrasena, $permisosAdmin)
     {
         $this->nombreUsuario = $nombreUsuario;
         $this->email = $email;
         $this->contrasena = $contrasena;
+        $this->permisosAdmin = $permisosAdmin; 
     }
 
 

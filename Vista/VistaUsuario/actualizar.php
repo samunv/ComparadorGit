@@ -18,7 +18,7 @@
         <input type="number" name="comunidad" id="comunidad" max="7000" placeholder="Comunidad" required><br>
         <label for="seguridad">Seguridad Nueva:</label><br>
         <input type="number" name="seguridad" id="seguridad" min="1" max="10" placeholder="Seguridad" required><br>
-        <label for="version">Version Nueva:</label><br>
+        <label for="version">Versión Nueva:</label><br>
         <input type="text" name="version" id="version" maxlength="15" placeholder="Versión" required>
 
 

@@ -1,16 +1,26 @@
 window.addEventListener("DOMContentLoaded", function () {
   let seccionContenedores = document.getElementById("seccion-contenedores");
-  let res; // Variable para almacenar la respuesta
+  let resDatos; // Variable para almacenar los datos
+  let resUsuarios; //variable para almacenar los usuarios
+  let tablaUsuarios = document.getElementById("seccion-tabla");
+
+  let ventanaEliminar = document.getElementById("ventana-eliminar-oculta");
+  let btnCancelar = document.getElementById("btn-cancelar");
+  let overlay = document.getElementById("overlay");
 
   // Realiza una solicitud  utilizando fetch
   fetch("/ComparadorGit/Controlador/panelcontrolador.php")
     .then((respuesta) => respuesta.json())
     .then((data) => {
-      res = data; // Almacena la respuesta en la variable res
-      console.log(res);
-      imprimirContenedores(res);
-      eliminar(res);
-      actualizar(res);
+      resDatos = data.datos; // Almacena la respuesta (datos) en la variable resDatos
+      resUsuarios = data.usuarios; // Almacena la respuesta (usuarios) en la variable resUsuarios
+      console.log(resDatos);
+      imprimirContenedores(resDatos);
+      eliminar(resDatos);
+      actualizar(resDatos);
+      imprimirTablaUsuarios(resUsuarios);
+      eliminarUsuarios(resUsuarios);
+      actualizarUsuario(resUsuarios);
     })
     .catch((error) => {
       console.error("Error al realizar la solicitud:", error);
@@ -62,14 +72,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Función para manejar la eliminación de contenedores
   function eliminar(datos) {
-    let ventanaEliminar = document.getElementById("ventana-eliminar-oculta");
-    let btnCancelar = document.getElementById("btn-cancelar");
-    let overlay = document.getElementById("overlay");
-
     // Agregar eventos a los iconos de eliminar
     for (let i = 0; i < datos.length; i++) {
       let iconoEliminar = document.getElementById(datos[i].nombre);
-      let imprimirNombre = document.getElementById("nombre-del-so");
+      let imprimirNombre = document.getElementById("nombre-del-elemento");
 
       iconoEliminar.addEventListener("click", function (e) {
         //Al pulsar en el icono de eliminar, abrir la ventana y el overlay
@@ -97,9 +103,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
     btnEliminar.addEventListener("click", function () {
       //Pasar el nombre del SO mediante el método get a eliminarcontrolador
-      fetch("./../../Controlador/eliminarcontrolador.php?nombre=" + nombreSO)
+      fetch("./../../Controlador/eliminarcontrolador.php?nombreSO=" + nombreSO)
         .then((respuesta) => respuesta.json())
         .then(() => {
+          console.log("Nombre: ", nombreSO);
           // Recargar la página del panel
           window.location.href = "paneldecontrol.php";
         })
@@ -131,6 +138,123 @@ window.addEventListener("DOMContentLoaded", function () {
           datos[i].imagen +
           "&gratis=" +
           datos[i].gratis;
+      });
+    }
+  }
+
+  function imprimirTablaUsuarios(usuarios) {
+    let html = "<table id='tabla-de-usuarios'>";
+
+    // Fila de encabezado
+    html += "<tr id='encabezado-tabla'>";
+    html += "<td>Nombre</td>";
+    html += "<td>Email</td>";
+    html += "<td>Contraseña</td>";
+    html += "<td>Permisos</td>";
+    html += "<td>Actualizar</td>";
+    html += "<td>Eliminar</td>";
+    html += "</tr>";
+
+    // Filas de usuarios
+    for (let i = 0; i < usuarios.length; i++) {
+      html += "<tr>";
+      html += "<td>" + usuarios[i].nombreUsuario + "</td>";
+      html += "<td>" + usuarios[i].email + "</td>";
+      html += "<td>********</td>";
+      html += "<td>" + usuarios[i].admin + "</td>";
+      html +=
+        "<td><img src='../img/cuadrado-de-la-pluma.png' width='30' height='30' class='icono-actualizar' id='" +
+        usuarios[i].nombreUsuario +
+        "-" +
+        usuarios[i].idUsuario +
+        "'/></td>";
+      html +=
+        "<td><img id='" +
+        usuarios[i].nombreUsuario +
+        "' src='../img/borrar.png' alt='eliminar' width='30' height='30' class='icono-eliminar' title='eliminar'></td>";
+      html += "</tr>";
+    }
+
+    html += "</table>";
+
+    tablaUsuarios.innerHTML = html;
+  }
+
+  //Obtener el botón subir
+  let btnSubir = document.getElementById("btn-subir");
+  //Ocultar el botón de subir
+  btnSubir.style.display = "none";
+
+  //Al hacer scroll hacia abajo en la página, aparecer el boton de subir
+  window.addEventListener("scroll", function () {
+    let scrollPosition = window.scrollY;
+
+    if (scrollPosition > 300) {
+      btnSubir.style.display = "block";
+    } else {
+      btnSubir.style.display = "none";
+    }
+  });
+
+  // Función para manejar la eliminación de contenedores
+  function eliminarUsuarios(usuarios) {
+    // Agregar eventos a los iconos de eliminar
+    for (let i = 0; i < usuarios.length; i++) {
+      let iconoEliminar = document.getElementById(usuarios[i].nombreUsuario);
+      let imprimirNombre = document.getElementById("nombre-del-elemento");
+
+      iconoEliminar.addEventListener("click", function (e) {
+        //Al pulsar en el icono de eliminar, abrir la ventana y el overlay
+        ventanaEliminar.style.display = "flex";
+        overlay.style.display = "block";
+
+        //Coger el nombre del usuario (guardado como id del icono de eliminar), mediante el target del objeto e
+        imprimirNombre.innerHTML = "" + e.target.id;
+
+        //Pasarlo como parametro a peticionEliminar()
+        console.log(e.target.id);
+        peticionEliminarUsuarios(e.target.id);
+      });
+    }
+
+    // Cierra la ventana de confirmación de eliminación
+    btnCancelar.addEventListener("click", function () {
+      ventanaEliminar.style.display = "none";
+      overlay.style.display = "none";
+    });
+  }
+
+  // Función para realizar la petición de eliminación
+  function peticionEliminarUsuarios(nombreUsuario) {
+    let btnEliminar = document.getElementById("btn-eliminar");
+
+    btnEliminar.addEventListener("click", function () {
+      console.log(nombreUsuario);
+      //Pasar el nombre del usuario mediante el método get a eliminarcontrolador
+      fetch(
+        "./../../Controlador/eliminarusuariocontrolador.php?nombreusuario=" +
+          nombreUsuario
+      )
+        .then((respuesta) => respuesta.json())
+        .then((data) => {
+          console.log("DATOS:", data);
+          // Recargar la página del panel
+          window.location.href = "paneldecontrol.php";
+        });
+    });
+  }
+
+  function actualizarUsuario(usuarios) {
+    for (let i = 0; i < usuarios.length; i++) {
+      let actualizar = document.getElementById(
+        usuarios[i].nombreUsuario + "-" + usuarios[i].idUsuario
+      );
+      actualizar.addEventListener("click", function () {
+        window.location.href =
+          "actualizarusuario.php?nombreUsuario=" +
+          usuarios[i].nombreUsuario +
+          "&idUsuario=" +
+          usuarios[i].idUsuario;
       });
     }
   }

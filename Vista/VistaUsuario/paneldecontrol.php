@@ -19,7 +19,7 @@
     include("header.php");
     ?>
 
-    <h1>Panel de Control</h1>
+    <h1 id="h1-panel-de-control">Panel de Control</h1>
 
     <section id="seccion-1">
         <div class="contenedores-seccion1"><a href="#seccion-administrar-datos"><img src="../img/administrar-datos (2).png" alt="" width="680" height="150"></a></div>
@@ -35,7 +35,7 @@
 
     <div id="ventana-eliminar-oculta">
         <img src="../img/advertencia.png" alt="advertencia" width="200" height="200">
-        <h2>¿Estás seguro de que quieres eliminar <span id="nombre-del-so"></span>?</h2>
+        <h2>¿Estás seguro de que quieres eliminar <span id="nombre-del-elemento"></span>?</h2>
         <form id="formulario-eliminar">
 
             <div class="caja-botones">
@@ -54,6 +54,8 @@
         <h1>Administrar Usuarios</h1>
         <section id="seccion-tabla"></section>
     </section>
+
+    <a href="#h1-panel-de-control"><button type="button" id="btn-subir" class="btn-subir">🡩</button></a>
 
     <?php
     include("footer.php");

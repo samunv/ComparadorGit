@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OScomparer | Bienvenido</title>
+    <title>OScomparer | Login</title>
     <link rel="icon" href="Vista/img/flechas-repetir (1).png">
     <link rel="stylesheet" href="Vista/CSS/login.css?v=<?php echo time() ?>">
     <script src="/ComparadorGit/Vista/JS/login.js?v=<?php echo time() ?>"></script>
 </head>
+
 <body>
 
     <div id="logo">
@@ -35,6 +36,8 @@
         <p>Prueba a inicar sesión de nuevo.</p>
         <button type="button" id="btn-alerta">Continuar</button>
     </div>
+
+    <div id="overlay" class="overlay"></div>
 
 
     <p class="texto-proteccion">OScomparer | Todos los derechos reservados</p>

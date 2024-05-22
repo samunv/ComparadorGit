@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", function () {
       sessionStorage.removeItem("permisosAdmin");
       // limpiar el html del nombre del usuario
       nombreUsuarioHtml.innerHTML = "";
-      window.location.href = "/ComparadorGit/login.php";
+      window.location.href = "/ComparadorGit/index.php";
 
       console.log("Sesión cerrada");
     } else {

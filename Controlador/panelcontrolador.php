@@ -3,11 +3,16 @@ require_once "../Modelo/SistemaOperativoDAOImplementar.php";
 require_once "../Modelo/UsuarioDAOimplementar.php";
 
 $daoSoImp = new SistemaOperativoDAOimplementar();
-$daoUsuario = new UsuarioDAOimplementar(); 
+$daoUsuarioImp = new UsuarioDAOimplementar(); 
 
 
+$array = array(); 
 
-$datos = $daoSoImp->leerSO();
+$datos = $daoSoImp->leerSOsinJson();
 
+$usuarios = $daoUsuarioImp->leerUsuarios(); 
 
-echo $datos;
+$array["usuarios"] = $usuarios;
+$array["datos"] = $datos; 
+
+echo json_encode($array);

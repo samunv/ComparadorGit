@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
         console.log(data);
         alert(data);
         //Volver a la página del panel de control después de recibir la respuesta
-        window.location.href = "./../VistaUsuario/paneldecontrol.php";
+        //window.location.href = "./../VistaUsuario/paneldecontrol.php";
       });
   });
 });

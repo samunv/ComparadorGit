@@ -39,6 +39,17 @@ class UsuarioDAOimplementar implements UsuarioDAO
         return $datosArray;
     }
 
+    public function leerUsuarios()
+    {
+        $consulta = mysqli_query($this->conexion->getConexion(), "SELECT * FROM usuarios") or die("Error en consulta: " . mysqli_error($this->conexion->getConexion()));
+        $datosArray = array();
+        while ($reg = mysqli_fetch_array($consulta)) {
+            $datosArray[] = $reg;
+        }
+
+        return $datosArray;
+    }
+
 
     /**
      * Función para crear un nuevo usuario en la base de datos.
@@ -85,11 +96,51 @@ class UsuarioDAOimplementar implements UsuarioDAO
 
 
 
-    public function eliminarUsuario(Usuarios $usuario)
+    public function eliminarUsuario($nombre)
     {
+        // Sentencia SQL con marcador de posición
+        $sql = "DELETE FROM usuarios WHERE nombreUsuario=?";
+
+        // Preparar la declaración SQL
+        $consulta = $this->conexion->getConexion()->prepare($sql);
+
+        if ($consulta) {
+            // Asociar parámetro e idSO a la declaración
+            $consulta->bind_param("s", $nombre);
+
+            // Ejecutar la declaración
+            $resultado = $consulta->execute();
+
+            // Verificar si la ejecución tuvo éxito
+            if ($resultado) {
+                return "Usuario eliminado exitosamente.";
+            } else {
+                return "Error al eliminar el Usuario";
+            }
+        } else {
+            // Si la preparación falla, devolver un mensaje de error
+            return "Error al preparar la consulta";
+        }
     }
-    public function actualizarNombre($nombre)
+
+    public function actualizarPermisos($idUsuario, $permiso)
     {
+        $sql = "UPDATE usuarios SET admin=? WHERE idUsuario=?";
+        $consulta = $this->conexion->getConexion()->prepare($sql);
+
+
+        if ($consulta) {
+
+            $consulta->bind_param("ii", $permiso, $idUsuario);
+
+            $resultado = $consulta->execute();
+            if ($resultado) {
+                return "Permisos actualizados exitosamente.";
+            } else {
+                return "Error al actualizar los permisos";
+            }
+        } else {
+            return "Error al preparar la consulta";
+        }
     }
 }
-
